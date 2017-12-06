@@ -1,0 +1,11 @@
+Tag: xpRDStation - venda
+Tipo da Tag: Html Personalizado
+Acionamento: orderPlaced
+
+HTML:
+<script>
+ var email = xp_geral.GetEmailSite();
+	if (email != undefined) {
+		xpRDStation.PostVenda(email, {{transactionTotal}});
+	}
+</script>

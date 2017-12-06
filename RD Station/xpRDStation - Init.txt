@@ -1,0 +1,52 @@
+Tag: XP_GeralxpRDStation - Init
+Tipo da Tag: Html Personalizado
+Acionamento: All Pages
+
+HTML:
+<script>
+var xpRDStation = {
+		token: "xxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+		tokenPrivado: "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+		PostLead: function (_email, _dados) {
+			if (!this.ValidaLead(_email, 0)) return;
+			var dados = {
+				"token_rdstation": this.token,
+				"email": _email
+			}
+			$.extend(dados, _dados);
+			return $.post("https://www.rdstation.com.br/api/1.3/conversions", dados, function(){console.log("rdstation: lead enviado.") });
+		},
+		PutStatus: function (_email, _status, _oportunity) {
+			var oportunity = (_oportunity == undefined || typeof (_oportunity) != "boolean") ? false : _oportunity;
+			if (!this.ValidaLead(_email, _status, _oportunity)) return;
+			dados = {
+				"auth_token": this.tokenPrivado,
+				"lead": {
+					"lifecycle_stage": _status,
+					"opportunity": _oportunity
+				}
+			}
+          	return $.ajax({
+              url: "https://www.rdstation.com.br/api/1.2/leads/" + _email,
+              type: 'PUT',
+              success: function(){console.log("rdstation putstatus ok" );},
+              data: dados
+            });
+		},
+		PostVenda: function (_email, _valor, _status) {
+			if (!this.ValidaLead(_email, 2)) return;
+			var status = (_status == undefined) ? "won" : _status;
+			dados = {
+				"status": status,
+				"value":  _valor,
+				"email": _email
+			}
+			return $.post("https://www.rdstation.com.br/api/1.2/services/" + this.tokenPrivado + "/generic", dados, function(){ console.log("rdstation: postvenda ok") });
+		},
+		ValidaLead: function (_email, _status, _oportunity) {
+			var er = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+        return (!er.exec(_email)) ? !1 : !0
+             
+		}
+	}
+</script>

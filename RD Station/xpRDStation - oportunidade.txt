@@ -1,0 +1,11 @@
+Tag: xpRDStation - oportunidade
+Tipo da Tag: Html Personalizado
+Acionamento: cart
+
+HTML:
+<script>
+	var email = xp_geral.GetEmailSite();
+  if (email != undefined) {
+    xpRDStation.PutStatus(email, 1, true);
+  }  
+</script>

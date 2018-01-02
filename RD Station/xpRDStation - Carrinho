@@ -1,0 +1,28 @@
+<script>
+function IncluirLead(){
+  	var email = xp_geral.GetEmailSite();
+  	console.log(email);
+	if(email != undefined){
+      	var produtos = {{orderFormProducts}};
+  		var valorPedido = {{orderFormTotal}} / 100;
+  		var produtosLista = new Array();
+  		var categoriasLista = new Array();
+  		for(var i = 0; i < produtos.length; i++){
+        	var produto = produtos[i];
+          	produtosLista.push(produto.name);
+          	categoriasLista.push(produto.categoryTree);
+        }
+  
+      	var dados = {
+        	"tags": "carrinho",
+        	"identificador": "vtex-checkout",
+	        "Categorias": categoriasLista.join(","),
+    	    "Produtos": produtosLista.join(","),
+        	"Valor_Pedido":valorPedido
+      	}
+        console.log(dados);
+      	var ajax = xpRDStation.PostLead(email, dados);
+	}
+}
+IncluirLead();  
+</script>

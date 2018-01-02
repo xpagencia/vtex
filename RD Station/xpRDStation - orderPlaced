@@ -1,0 +1,27 @@
+<script>
+function IncluirPedido(){
+	var email = {{visitorContactInfo0}};
+    var produtos = {{transactionProducts}};
+    var valorPedido = {{transactionTotal}};
+  	var formaPagamento = {{transactionPaymentType0paymentSystemName}};
+    var produtosLista = new Array();
+    var categoriasLista = new Array();
+    for(var i = 0; i < produtos.length; i++){
+    	var produto = produtos[i];
+	    produtosLista.push(produto.name);
+	    categoriasLista.push(produto.categoryTree);
+  	}
+
+  	var dados = {
+    	"tags": "vtex,checkout,orderplaced",
+    	"identificador": "vtex-orderplaced",
+    	"Categorias": categoriasLista.join(","),
+    	"Produtos": produtosLista.join(","),
+    	"Valor_Pedido":valorPedido,
+      	"formaPagamento": formaPagamento
+	}
+  	console.log(dados);
+  	var ajax = xpRDStation.PostLead(email, dados);
+}
+IncluirPedido();  
+</script>

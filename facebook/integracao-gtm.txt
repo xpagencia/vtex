@@ -1,4 +1,8 @@
 ### variaveis GTM ###
+- productName
+	- Tipo: Variável da camada de dados
+	- Nome da variável: productName
+
 - pageCategory
 	- Tipo: Variável da camada de dados
 	- Nome da variável: pageCategory
@@ -18,7 +22,22 @@
 - transactionTotal
 	- Tipo: Variável da camada de dados
 	- Nome da variável: transactionTotal
-
+	
+- ProductsOrderId
+	- Tipo: Javascript personalizado
+	- function() {
+	  var arr = {{transactionProducts}}, len = arr.length, i = -1, res = [];
+	  while (++i < len) {res[i] = arr[i].id;};
+	  return res;
+	}
+	
+- ProductsCartId
+	- TIpo: Javascript personalizado
+	- function() {
+	  var arr = {{orderFormProducts}}, len = arr.length, i = -1, res = [];
+	  while (++i < len) {res[i] = arr[i].id;};
+	  return res;
+	}
 
 ### acionadores GTM ###
 - addToCart

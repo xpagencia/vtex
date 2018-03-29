@@ -38,6 +38,18 @@
 	  while (++i < len) {res[i] = arr[i].id;};
 	  return res;
 	}
+	
+- VisitorContactInfoEmail
+	- variáveis da camada de dados
+	- visitorContactInfo.0
+	
+- shelfProductIds
+	- variavel da camada de dados
+	- shelfProductIds
+	
+- siteSearchTerm
+	- variavel de camada de dados
+	- siteSearchTerm
 
 ### acionadores GTM ###
 - addToCart
@@ -105,7 +117,7 @@
 
 - FB - AddToCart
 	-  HTML personalizado
-		<script>fbq('track', 'AddToCart', {content_ids: '{{productId}}', content_type: 'product', value: '{{productPriceTo}}',  currency: 'BRL'});</script>
+		<script>fbq('track', 'AddToCart', {content_ids: '{{productId}}', content_type: 'product', value: '{{productPriceTo}}',  currency: 'BRL',em: '{{VisitorContactInfoEmail}}'});</script>
 	- Sequencia de Tags:
 		Disparar tag antes: FB - Pixel
 	- Acionamento:
@@ -181,7 +193,7 @@
 
 - FB - Purchase
 	-  HTML personalizado
-		<script>fbq('track', 'Purchase', {value: {{transactionTotal}}, currency: 'BRL'});</script>
+		<script>fbq('track', 'Purchase', {value: {{transactionTotal}}, currency: 'BRL',em: '{{VisitorContactInfoEmail}}',content_type: 'product',content_ids: {{ProductsOrderId}}});</script>
 	- Sequencia de Tags:
 		Disparar tag antes: FB - Pixel
 	- Acionamento:
@@ -189,7 +201,7 @@
 
 - FB - Search
 	-  HTML personalizado
-		<script>fbq('track', 'Search');</script>
+		<script>fbq('track', 'Search',{search_string: '{{siteSearchTerm}}', content_category: 'Product Search', content_ids: '{{shelfProductIds}}'});</script>
 	- Sequencia de Tags:
 		Disparar tag antes: FB - Pixel
 	- Acionamento:

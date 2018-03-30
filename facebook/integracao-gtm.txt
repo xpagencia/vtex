@@ -209,7 +209,7 @@
 
 - FB - ViewContent
 	-  HTML personalizado
-		<script>fbq('track', 'ViewContent');</script>
+		<script>var precoFinal = parseFloat({{productPriceTo}}).toFixed(2);fbq('track', 'ViewContent', {value: precoFinal,currency: 'BRL',content_name: '{{productName}}',content_ids: ['{{productId}}'],content_type: 'product'});</script>
 	- Sequencia de Tags:
 		Disparar tag antes: FB - Pixel
 	- Acionamento:

@@ -1,29 +1,41 @@
 ### variaveis GTM ###
+- click classes:
+	- Grupo: Variáveis incorporadas
+	- Tipo: Variável da camada de dados
+	- nome da variável:gtm.elementClasses
+	
 - productName
+	- Grupo: Variáveis definidas pelo usuário
 	- Tipo: Variável da camada de dados
 	- Nome da variável: productName
 
 - pageCategory
+	- Grupo: Variáveis definidas pelo usuário
 	- Tipo: Variável da camada de dados
 	- Nome da variável: pageCategory
 
 - productId
+	- Grupo: Variáveis definidas pelo usuário
 	- Tipo: Variável da camada de dados
 	- Nome da variável: productId
 
 - productPriceTo
+	- Grupo: Variáveis definidas pelo usuário
 	- Tipo: Variável da camada de dados
 	- Nome da variável: productPriceTo
 
 - transactionId
+	- Grupo: Variáveis definidas pelo usuário
 	- Tipo: Variável da camada de dados
 	- Nome da variável: transactionId
 
 - transactionTotal
+	- Grupo: Variáveis definidas pelo usuário
 	- Tipo: Variável da camada de dados
 	- Nome da variável: transactionTotal
 	
 - ProductsOrderId
+	- Grupo: Variáveis definidas pelo usuário
 	- Tipo: Javascript personalizado
 	- function() {
 	  var arr = {{transactionProducts}}, len = arr.length, i = -1, res = [];
@@ -31,7 +43,13 @@
 	  return res;
 	}
 	
+- orderFormProducts
+	- Grupo: Variáveis definidas pelo usuário
+	- Tipo: variáveis da camada de dados
+	- orderFormProducts
+	
 - ProductsCartId
+	- Grupo: Variáveis definidas pelo usuário
 	- TIpo: Javascript personalizado
 	- function() {
 	  var arr = {{orderFormProducts}}, len = arr.length, i = -1, res = [];
@@ -40,22 +58,27 @@
 	}
 	
 - VisitorContactInfoEmail
+	- Grupo: Variáveis definidas pelo usuário
 	- variáveis da camada de dados
 	- visitorContactInfo.0
 	
 - shelfProductIds
+	- Grupo: Variáveis definidas pelo usuário
 	- variavel da camada de dados
 	- shelfProductIds
 	
 - siteSearchTerm
+	- Grupo: Variáveis definidas pelo usuário
 	- variavel de camada de dados
 	- siteSearchTerm
 	
 - skuStocks
+	- Grupo: Variáveis definidas pelo usuário
 	- variável de camada de dados
 	- skuStocks
 	
 - productSkuIds
+	- Grupo: Variáveis definidas pelo usuário
 	- javascript personalizado
 	- function(){return Object.keys({{skuStocks}});}
 

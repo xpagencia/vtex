@@ -64,7 +64,7 @@ HTML:
                 email = dl.visitorContactInfo[0];
             }            
         }
-      	email = '';
+
         if (!this.IsEmail(email)) {
             email = this.Cookie.Get("xp-NewsletterLayer-cookie");
             if (!this.IsEmail(email)) {

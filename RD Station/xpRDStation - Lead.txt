@@ -4,13 +4,16 @@ Acionamento: All Pages
 
 HTML:
 <script>
-  function callbackNews(dataResult){
-    var email = $(".newsletter-client-email").val();
-    var nome = $(".newsletter-client-name").val();
-    var dados = {
-      "tags": "vtex-newsletter",
-      "identificador": "vtex-news-rodape",
-      "nome":nome
+  function callbackNews(dataResult, identificador, dados){
+    if(identificador == undefined) identificador = "vtex-news-rodape";
+    if(dados == undefined){
+      var email = $(".newsletter-client-email").val();
+      var nome = $(".newsletter-client-name").val();
+      var dados = {
+        "tags": "vtex-newsletter",
+        "identificador": "vtex-news-rodape",
+        "nome":nome
+      }
     }
     var ajax = xpRDStation.PostLead(email, dados);
     xp_geral.Cookie.Insert('xp-NewsletterLayer-cookie', email, 90);

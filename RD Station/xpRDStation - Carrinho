@@ -1,3 +1,8 @@
+Tag: xpRDStation - Carrinho
+Tipo da Tag: Html Personalizado
+Acionamento: cart / checkout-payment / checkout-email / checkout-shipping
+
+HTML:
 <script>
 function IncluirLead(){
   	var email = xp_geral.GetEmailSite();

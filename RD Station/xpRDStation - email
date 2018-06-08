@@ -1,0 +1,13 @@
+Tag: xpRDStation - email
+Disparar tag antes: xpRDStation - carrinho
+acionamento: checkout - email
+
+Html:
+<script>
+$(window).on('hashchange', function(e){
+	console.log(e);
+  	if(e.originalEvent.oldURL.indexOf("/checkout/#/email") > -1){
+       IncluirLead();
+    }
+});
+</script>

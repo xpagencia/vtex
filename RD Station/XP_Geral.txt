@@ -20,7 +20,7 @@ HTML:
                         $(target).html(newsMakeSuccessMessage())
                     } else {
                         $(target).find("fieldset").hide();
-                        $(target).find("fieldset").after("<div class='newsletter-msg ok'>Obrigado por se cadastrar na Casa do Skatista - Skate Shop!<br/>Em breve entraremos em contato com você para oferecer as melhores promoções.</div>")
+                        $(target).find("fieldset").after("<div class='newsletter-msg ok'>Obrigado por se cadastrar na UMEC!<br/>Em breve entraremos em contato com você para oferecer as melhores promoções.</div>")
                     }
                 } else {
                     newsMakeBackButtomEvent(target)
@@ -38,14 +38,30 @@ HTML:
         }
     })
 }
+function callbackNews(dataResult){
+  var email = $(".newsletter-client-email").val();
+  var nome = $(".newsletter-client-name").val();
+  xp_geral.Cookie.Insert('xp-NewsletterLayer-cookie', email, 365);
+}
 
   var xp_geral = {
-  IsEmail: function(email) {
+    FormatMoney: function(n, c, d, t) {
+        d = d == undefined ? "," : d,
+        t = t == undefined ? "." : t,
+        c = isNaN(c = Math.abs(c)) ? 2 : c,
+        s = n < 0 ? "-" : "";
+        if (n.toString().indexOf(".") == -1 && n.toString().indexOf(",") == -1)
+            n = n.toString().substr(0, n.toString().length - c) + "." + n.toString().substr(n.toString().length - c);
+        i = parseInt(n = Math.abs(+n || 0).toFixed(c)) + "";
+        j = (j = i.length) > 3 ? j % 3 : 0;
+        return s + (j ? i.substr(0, j) + t : "") + i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + t) + (c ? d + Math.abs(n - i).toFixed(c).slice(2) : "")
+    },
+	IsEmail: function(email) {
         var er = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
         return (!er.exec(email)) ? !1 : !0
     },
     GetDataLayer: function (e) {
-        for (var d = 0; d < dataLayer.length; d++) {
+        for (var d = dataLayer.length-1; d > -1; d--) {
             dl = dataLayer[d];
             v = Object.keys(dl);
             for (var i = 0; i < v.length; i++) {
@@ -64,7 +80,6 @@ HTML:
                 email = dl.visitorContactInfo[0];
             }            
         }
-
         if (!this.IsEmail(email)) {
             email = this.Cookie.Get("xp-NewsletterLayer-cookie");
             if (!this.IsEmail(email)) {

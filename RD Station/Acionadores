@@ -1,0 +1,12 @@
+acionador: checkout-profile
+evento: profile
+acionado em: Todos os eventos personalizados
+--
+acionador: checkout-shipping
+evento: shipping
+acionado em: Todos os eventos personalizados
+--
+acionador: checkout-payment
+evento: payment
+acionado em: Todos os eventos personalizados
+

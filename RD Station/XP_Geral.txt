@@ -20,7 +20,7 @@ HTML:
                         $(target).html(newsMakeSuccessMessage())
                     } else {
                         $(target).find("fieldset").hide();
-                        $(target).find("fieldset").after("<div class='newsletter-msg ok'>Obrigado por se cadastrar na UMEC!<br/>Em breve entraremos em contato com você para oferecer as melhores promoções.</div>")
+                        $(target).find("fieldset").after("<div class='newsletter-msg ok'>Obrigado por se cadastrar na loja!<br/>Em breve entraremos em contato com você para oferecer as melhores promoções.</div>")
                     }
                 } else {
                     newsMakeBackButtomEvent(target)

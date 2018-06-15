@@ -1,6 +1,6 @@
 Tag: xpRDStation - email
 Disparar tag antes: xpRDStation - carrinho
-acionamento: checkout - email
+acionamento: checkout-profile, checkout-shipping,checkout-payment
 
 Html:
 <script>

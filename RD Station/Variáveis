@@ -1,0 +1,61 @@
+/*
+Variavel: Checkout - Cliente - Cidade
+Tipo: Javascript Personalizado
+*/
+function(){
+  x = {{visitorDemographicInfo}}[1].split(" - ");
+	return x[x.length-2];
+}
+--
+/*
+Variavel: Checkout - Cliente - UF
+Tipo: Javascript Personalizado
+*/
+function(){
+  x = {{visitorDemographicInfo}}[1].split(" - ");
+	return x[x.length-1];
+}
+--
+Variavel: transactionProducts
+Tipo: Camada de Dados
+valor: transactionProducts
+--
+Variavel: transactionShipping
+Tipo: Camada de Dados
+valor: transactionShipping
+--
+/*
+Variavel: transactionSubtotal
+Tipo: Javascript Personalizado
+*/
+function(){
+  return {{transactionTotal}} - {{transactionShipping}} - {{transactionTax}};
+}
+--
+Variavel: transactionTax
+Tipo: Evento personallizado
+valor: transactionTax
+--
+Variavel: orderFormShipping
+Tipo: Evento personallizado
+valor: orderFormShipping
+--
+/*
+Variavel: orderFormSubtotal
+Tipo: Javascript Personalizado
+*/
+function(){
+  return ({{orderFormTotal}} / 100) - {{orderFormShipping}};
+}
+--
+Variável: transactionPaymentType0paymentSystemName
+Tipo: Evento Personalizado
+valor: transactionPaymentType.0.paymentSystemName
+--
+Variável: visitorDemographicInfo
+Tipo: Evento Personalizado
+valor: visitorDemographicInfo
+--
+Variável: visitorContactInfo0
+Tipo: Evento Personalizado
+valor: visitorContactInfo.0

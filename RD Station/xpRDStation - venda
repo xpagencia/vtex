@@ -1,8 +1,9 @@
+<!--
 Tag: xpRDStation - venda
 Tipo da Tag: Html Personalizado
 Acionamento: orderPlaced
-
-HTML:
+Observação: Esse item é para caso deseje marcar o pedido como venda na RD Station. O recomendado é que seja feito essa marcação apenas depois que o produto é entregue na casa do cliente.
+-->
 <script>
  var email = xp_geral.GetEmailSite();
 	if (email != undefined) {

@@ -1,8 +1,9 @@
+<!--
 Tag: xpRDStation - orderPlaced
 Tipo da Tag: Html Personalizado
 Acionamento: orderPlaced
+-->
 
-HTML:
 <script>
 function IncluirPedido(){
     var UF = {{Checkout - Cliente - UF}};

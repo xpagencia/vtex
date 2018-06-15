@@ -1,3 +1,7 @@
+acionador: checkout-email
+evento: email
+acionado em: Todos os eventos personalizados
+--
 acionador: checkout-profile
 evento: profile
 acionado em: Todos os eventos personalizados

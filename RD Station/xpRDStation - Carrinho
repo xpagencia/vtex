@@ -13,6 +13,8 @@ function IncluirLead(){
       }
     }
 	if(email != undefined){
+      	var UF = {{Checkout - Cliente - UF}};
+  		var cidade = {{Checkout - Cliente - Cidade}};
       	var produtos = {{orderFormProducts}};
   		var valorPedido = {{orderFormTotal}} / 100;
     	var valorFrete = {{orderFormShipping}};
@@ -52,7 +54,9 @@ function IncluirLead(){
             "Produtos": produtosLista.join(","),
         	"Valor_Pedido":xp_geral.FormatMoney(valorPedido.toFixed(2),2),
       		"Valor_Frete":xp_geral.FormatMoney(valorFrete.toFixed(2),2),
-      		"Valor_Subtotal":xp_geral.FormatMoney(valorSubtotal.toFixed(2),2)
+      		"Valor_Subtotal":xp_geral.FormatMoney(valorSubtotal.toFixed(2),2),
+          	"UF":UF,
+          	"Cidade": cidade
       	}
         console.log('email na rdstation: ' + email);
         console.log(dados);

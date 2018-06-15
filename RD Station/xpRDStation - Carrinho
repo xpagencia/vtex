@@ -6,12 +6,13 @@ HTML:
 <script>
 function IncluirLead(){
   	var email = xp_geral.GetEmailSite();
-  	console.log(email);
+  	
   	if (email == undefined){
       if($("#client-pre-email").length == 1 && $("#client-pre-email").val().length > 0){
         email = $("#client-pre-email").val();
       }
     }
+  	console.log("IncluirLead:"+email);
 	if(email != undefined){
       	var UF = {{Checkout - Cliente - UF}};
   		var cidade = {{Checkout - Cliente - Cidade}};
@@ -24,6 +25,11 @@ function IncluirLead(){
         var subcategoriasLista = new Array();
         var categoriasLista = new Array();
         var marcasLista = new Array();
+  
+  		valorPedido = (valorPedido == undefined) ? 0 : valorPedido;
+  		valorFrete = (valorFrete == undefined) ? 0 : valorFrete;
+  		valorSubtotal = (valorSubtotal == undefined) ? 0 : valorSubtotal;
+  
         for(var i = 0; i < produtos.length; i++){
             var produto = produtos[i];
             marcasLista.push(produto.brand);
@@ -43,7 +49,11 @@ function IncluirLead(){
                 }
             }
         }
-  
+  console.log("informações do carrinho: ");
+  console.log(valorPedido);
+  console.log(valorFrete);
+  console.log(valorSubtotal);
+    
       	var dados = {
         	"tags": "carrinho",
         	"identificador": "vtex-checkout",

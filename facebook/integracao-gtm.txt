@@ -81,6 +81,15 @@
 	- Grupo: Variáveis definidas pelo usuário
 	- javascript personalizado
 	- function(){return Object.keys({{skuStocks}});}
+	
+- transactionProductsIds
+	- Grupo: Variáveis definidas pelo usuário
+	- javascript personalizado
+	- function() {
+  var arr = {{transactionProducts}}, len = arr.length, i = -1, res = [];
+  while (++i < len) {res[i] = arr[i].sku;};
+  return res;
+}
 
 ### acionadores GTM ###
 - addToCart
@@ -176,11 +185,12 @@
 
 - FB - AddToCart
 	-  HTML personalizado
-		<script>fbq('track', 'AddToCart', {content_ids: '{{productId}}', content_type: 'product', value: '{{productPriceTo}}',  currency: 'BRL',em: '{{VisitorContactInfoEmail}}'});</script>
+		<script>var precoFinal = parseFloat({{orderFormProductsValue}}).toFixed(2);fbq('track', 'AddToCart', {content_ids: {{orderFormProductsIds}}, content_type: 'product', value: precoFinal,  currency: 'BRL',em: '{{VisitorContactInfoEmail}}'});</script>
 	- Sequencia de Tags:
 		Disparar tag antes: FB - Pixel
 	- Acionamento:
 		- addToCart
+		- checkout - cart
 
 - FB - checkout inicio
 	-  HTML personalizado
@@ -234,7 +244,7 @@
 
 - FB - Purchase
 	-  HTML personalizado
-		<script>fbq('track', 'Purchase', {value: {{transactionTotal}}, currency: 'BRL',em: '{{VisitorContactInfoEmail}}',content_type: 'product',content_ids: {{ProductsOrderId}}});</script>
+		<script>fbq('track', 'Purchase', {value: {{transactionTotal}}, currency: 'BRL',em: '{{VisitorContactInfoEmail}}',content_type: 'product',content_ids: {{transactionProductsIds}}});</script>
 	- Sequencia de Tags:
 		Disparar tag antes: FB - Pixel
 	- Acionamento:

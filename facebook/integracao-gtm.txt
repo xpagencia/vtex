@@ -106,6 +106,12 @@
 	- disparar:
 		Todos os eventos personalizados
 
+- checkout - email
+	- Tipo: Evento Personalizado
+	- Nome do evento: email
+	- disparar:
+		Todos os eventos personalizados
+
 - orderPlaced Trigger
 	- Tipo: Evento Personalizado
 	- Nome do evento: orderPlaced
@@ -179,10 +185,13 @@
 - FB - checkout inicio
 	-  HTML personalizado
 		<script>fbq('track', 'InitiateCheckout');</script>
+	- Opções de disparo da tag
+		- Uma vez por página
 	- Sequencia de Tags:
 		Disparar tag antes: FB - Pixel
 	- Acionamento:
 		- checkout - profile
+		- checkout - email
 
 - FB - CompleteRegistration
 	-  HTML personalizado

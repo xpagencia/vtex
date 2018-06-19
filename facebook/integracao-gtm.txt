@@ -3,7 +3,7 @@
 	- Grupo: Variáveis incorporadas
 	- Tipo: Variável da camada de dados
 	- nome da variável:gtm.elementClasses
-	
+
 - productName
 	- Grupo: Variáveis definidas pelo usuário
 	- Tipo: Variável da camada de dados
@@ -48,6 +48,23 @@
 	- Tipo: variáveis da camada de dados
 	- orderFormProducts
 	
+- orderFormProductsIds
+	- Grupo: Variáveis definidas pelo usuário
+	- Tipo: Javascript Personalizado
+	- function() {
+	  var arr = {{orderFormProducts}}, len = arr.length, i = -1, res = [];
+	  while (++i < len) {res[i] = arr[i].sku;};
+	  return res;
+	}
+
+- orderFormProductsValue
+	- Grupo: Variáveis definidas pelo usuário
+	- Tipo: Javascript Personalizado
+	- function() {
+	  var arr = {{orderFormProducts}}, len = arr.length, i = -1, subtotal = 0;
+	  while (++i < len) {if(arr[i].sellingPrice != undefined) subtotal += arr[i].sellingPrice;};
+	  return subtotal;
+	}
 - ProductsCartId
 	- Grupo: Variáveis definidas pelo usuário
 	- TIpo: Javascript personalizado

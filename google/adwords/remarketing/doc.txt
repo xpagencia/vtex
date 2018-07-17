@@ -1,0 +1,122 @@
+### variaveis GTM ###
+- GAdwords-codConversao
+	- Tipo: permanente
+	- valor: código de conversão enviado pelo cliente
+
+- GAdwords-labelConversao
+	- Tipo: permanente
+	- valor: label de conversão enviado pelo cliente
+
+- pageCategory
+	- Tipo: Variável da camada de dados
+	- nome da variavel: pageCategory
+
+- productId
+	- Tipo: Variável da camada de dados
+	- nome da variavel: productId
+
+- orderFormTotal
+	- Tipo: Variável da camada de dados
+	- nome da variavel: orderFormTotal
+
+- shelfProductIds
+	- Tipo: Variável da camada de dados
+	- nome da variavel: shelfProductIds
+
+- OrderFormProducts1
+	- Tipo: Variável da camada de dados
+	- nome da variavel: orderFormProducts.0.id
+
+- productPriceFrom
+	- Tipo: Variável da camada de dados
+	- nome da variavel: productPriceFrom
+
+- transactionId
+	- Tipo: Variável da camada de dados
+	- nome da variavel: transactionId
+
+
+### acionadores GTM ###
+- pg Geral
+	- TIpo: Exibição de página
+	- disparado em: Algumas exibições de página
+	- disparar:
+		- pageCategory corresponde a RegEx Department|Category|Home|InternalSiteSearch
+
+- pg Categoria
+	- TIpo: Exibição de página
+	- disparado em: Algumas exibições de página
+	- disparar:
+		- pageCategory é igual a Category
+
+- pg Departamento
+	- TIpo: Exibição de página
+	- disparado em: Algumas exibições de página
+	- disparar:
+		- pageCategory é igual a Department
+
+- pg Produto
+	- TIpo: Exibição de página
+	- disparado em: Algumas exibições de página
+	- disparar:
+		- pageCategory é igual a Product
+
+
+### tags do GTM ###
+
+- Remarketing do Google AdWords
+	- Remarketing do Google AdWords
+		- Código de conversão: {{GAdwords-codConversao}}
+		- Label de conversão: {{GAdwords-labelConversao}}
+	- Acionamento: All pages
+
+-GAdwords
+	- Acompanhamento de conversões do Google AdWords
+		- Código de conversão: {{GAdwords-codConversao}}
+		- Rótulo de conversão: {{GAdwords-labelConversao}}
+		- Valor da conversão: {{transactionTotal}}
+		- Id do Pedido: {{transactionId}}
+		- Código da moeda: BRL
+	- Acionamento: order placed
+
+- Remarketing - Carrinho
+	-  Remarketing do Google AdWords
+	- Código de conversão: {{GAdwords-codConversao}}
+	- Manualmente:
+		- ecomm_totalvalue = {{orderFormTotal}}
+		- ecomm_prodid = {{OrderFormProducts1}}
+		- ecomm_pagetype = cart
+	- Acionamento:
+		- cart
+		- order placed
+
+- Remarketing - Conclusão de Compra
+	-  Remarketing do Google AdWords
+	- Código de conversão: {{GAdwords-codConversao}}
+	- Manualmente:
+		- ecomm_totalvalue = {{transactionTotal}}
+		- ecomm_prodid = {{transactionProducts}}
+		- ecomm_pagetype = purchase
+	- Acionamento:
+		- order placed
+
+- Remarketing - Geral
+	-  Remarketing do Google AdWords
+	- Código de conversão: {{GAdwords-codConversao}}
+	- Manualmente:
+		- ecomm_totalvalue = {{orderFormTotal}}
+		- ecomm_prodid = {{shelfProductIds}}
+		- ecomm_pagetype = {{pageCategory}}
+	- Acionamento:
+		- pg Geral
+
+- Remarketing - Produtos
+	-  Remarketing do Google AdWords
+	- Código de conversão: {{GAdwords-codConversao}}
+	- Manualmente:
+		- ecomm_totalvalue = {{productPriceFrom}}
+		- ecomm_prodid = {{productId}}			
+		- ecomm_pagetype = {{pageCategory}}
+	- Acionamento:
+		- pg Produto
+

@@ -34,6 +34,14 @@
 - transactionId
 	- Tipo: Variável da camada de dados
 	- nome da variavel: transactionId
+	
+- transactionProducts
+	- Tipo: Variável da camada de dados
+	- nome da variavel: transactionProducts
+
+- transactionTotal
+	- Tipo: Variável da camada de dados
+	- nome da variavel: transactionTotal
 
 
 ### acionadores GTM ###
@@ -88,7 +96,6 @@
 		- ecomm_pagetype = cart
 	- Acionamento:
 		- cart
-		- order placed
 
 - Remarketing - Conclusão de Compra
 	-  Remarketing do Google AdWords

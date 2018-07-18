@@ -33,11 +33,11 @@ function(){
 }
 --
 Variavel: transactionTax
-Tipo: Evento personallizado
+Tipo: Variável da camada de Dados
 valor: transactionTax
 --
 Variavel: orderFormShipping
-Tipo: Evento personallizado
+Tipo: Variável da camada de Dados
 valor: orderFormShipping
 --
 /*
@@ -49,13 +49,13 @@ function(){
 }
 --
 Variável: transactionPaymentType0paymentSystemName
-Tipo: Evento Personalizado
+Tipo: Variável da camada de Dados
 valor: transactionPaymentType.0.paymentSystemName
 --
 Variável: visitorDemographicInfo
-Tipo: Evento Personalizado
+Tipo: Variável da camada de Dados
 valor: visitorDemographicInfo
 --
 Variável: visitorContactInfo0
-Tipo: Evento Personalizado
+Tipo: Variável da camada de Dados
 valor: visitorContactInfo.0

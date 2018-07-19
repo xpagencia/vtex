@@ -59,3 +59,7 @@ valor: visitorDemographicInfo
 Variável: visitorContactInfo0
 Tipo: Variável da camada de Dados
 valor: visitorContactInfo.0
+
+variável: OrderFormProducts
+tipo: variável de camada de dados
+valor: OrderFormProducts

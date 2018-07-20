@@ -1,16 +1,20 @@
 acionador: checkout-email
+Tipo do acionador: Evento personalizado
 evento: email
 acionado em: Todos os eventos personalizados
 --
 acionador: checkout-profile
+Tipo do acionador: Evento personalizado
 evento: profile
 acionado em: Todos os eventos personalizados
 --
 acionador: checkout-shipping
+Tipo do acionador: Evento personalizado
 evento: shipping
 acionado em: Todos os eventos personalizados
 --
 acionador: checkout-payment
+Tipo do acionador: Evento personalizado
 evento: payment
 acionado em: Todos os eventos personalizados
 

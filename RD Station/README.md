@@ -4,6 +4,7 @@
 <p><b><font color="#ff0000">Todo o script é criado diretamente no seu GTM (Google Tag Manager). Não há nenhuma necessidade de abrir o admin da loja.</font></b></p>
 <h2>Pré requisitos</h2>
 <p>Os acionadores "All Pages", "ProductView", "cart" e "orderPlaced" precisam já existir no GTM.</p>
+<p>Só é necessário editar a tag xpRDStation-Init para por os respectivos Tokens. O restante é só copiar e colar.</p>
 <h2>Funcionalidades</h2>
 <ul>
 	<li>Lead: É quando o usuário se cadastra na newsletter ou faz o cadastro da loja. </li>

@@ -1,0 +1,1 @@
+Copie para o Google Tag Manager exatamente como está no arquivo GTM.txt. Porém, precisa alterar os valores das variáveis ebitId e buscapeId para as suas respectivas contas numéricas na ferramenta do ebit e buscapé.

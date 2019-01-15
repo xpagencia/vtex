@@ -1,9 +1,3 @@
-####### acionadores #######
-* orderPlaced
-	- evento personalizado
-	- orderPlaced
-
-
 ####### variaveis ##########
 * buscapeId
 	- javascript personalizado
@@ -53,7 +47,7 @@
 	- javascript personalizado
 	- function() {return {{transactionProductsValues}}.join('|');}	
 
-* VisitorContactInfoEmail
+* visitorContactInfoEmail
 	- variáveis da camada de dados
 	- visitorContactInfo.0
 
@@ -73,7 +67,7 @@
 	- variaveis de camada de dados
 	- transactionPaymentType.0.installments
 
-* VisitorContactInfoCEP
+* visitorContactInfoCEP
 	- javascript personalizado
 	- function(){
 		  var retorno = '';
@@ -100,6 +94,11 @@
 		  return retorno;
 		}
 
+####### acionadores #######
+* orderPlaced
+	- evento personalizado
+	- orderPlaced
+
 ####### tags #######
 * ebit-rodape 
 	- tag html personalizado
@@ -110,5 +109,5 @@
 * ebit-enquete-buscape-cpa 
 	- tag html personalizado
 	- OrderPLaced
-	- <param id="ebitParam" value="email={{VisitorContactInfoEmail}}&zipCode={{VisitorContactInfoCEP}}&parcels={{transactionInstallments}}&deliveryTax={{transactionShipping}}&totalSpent={{transactionTotal}}&value={{transactionProductsValuesPipe}}&quantity={{transactionProductsQuantityPipe}}&productName={{transactionProductsNamesPipe}}&transactionId={{transactionId}}&sku={{transactionProductsSkuPipe}}&buscapeId={{buscapeId}}&storeId={{ebitId}}" /><script type="text/javascript" id="getSelo" src="https://imgs.ebit.com.br/ebitBR/selo-ebit/js/getSelo.js?{{ebitId}}&lightbox=true"></script>
+	- <param id="ebitParam" value="email={{visitorContactInfoEmail}}&zipCode={{visitorContactInfoCEP}}&parcels={{transactionInstallments}}&deliveryTax={{transactionShipping}}&totalSpent={{transactionTotal}}&value={{transactionProductsValuesPipe}}&quantity={{transactionProductsQuantityPipe}}&productName={{transactionProductsNamesPipe}}&transactionId={{transactionId}}&sku={{transactionProductsSkuPipe}}&buscapeId={{buscapeId}}&storeId={{ebitId}}" /><script type="text/javascript" id="getSelo" src="https://imgs.ebit.com.br/ebitBR/selo-ebit/js/getSelo.js?{{ebitId}}&lightbox=true"></script>
 

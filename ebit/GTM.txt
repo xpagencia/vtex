@@ -1,11 +1,11 @@
 ####### variaveis ##########
 * buscapeId
 	- javascript personalizado
-	- function(){return 1130527;}
+	- function(){return 0000000;}
 
 * ebitId
 	- javascript personalizado
-	- function(){return 44976;}
+	- function(){return 00000;}
 
 * pageCategory
 	- variáveis da camada de dados

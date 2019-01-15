@@ -1,0 +1,114 @@
+####### acionadores #######
+* orderPlaced
+	- evento personalizado
+	- orderPlaced
+
+
+####### variaveis ##########
+* buscapeId
+	- javascript personalizado
+	- function(){return 1130527;}
+
+* ebitId
+	- javascript personalizado
+	- function(){return 44976;}
+
+* pageCategory
+	- variáveis da camada de dados
+	- pageCategory
+
+* transactionProducts
+	- variáveis da camada de dados
+	- transactionProducts
+
+* transactionProductsNames
+	- javascript personalizado
+	- function() {var arr = {{transactionProducts}}, len = arr.length, i = -1, res = []; while (++i < len) {res[i] = arr[i].name;} return res;}
+
+* transactionProductsNamesPipe
+	- javascript personalizado
+	- function() {return {{transactionProductsNames}}.join('|');}	
+
+* transactionProductsQuantity
+	- javascript personalizado
+	- function() {var arr = {{transactionProducts}}, len = arr.length, i = -1, res = []; while (++i < len) {res[i] = arr[i].quantity;} return res;}
+
+* transactionProductsQuantityPipe
+	- javascript personalizado
+	- function() {return {{transactionProductsQuantity}}.join('|');}	
+
+* transactionProductsSku
+	- javascript personalizado
+	- function() {var arr = {{transactionProducts}}, len = arr.length, i = -1, res = []; while (++i < len) {res[i] = arr[i].sku;} return res;}
+
+* transactionProductsSkuPipe
+	- javascript personalizado
+	- function() {return {{transactionProductsSku}}.join('|');}	
+
+* transactionProductsValues
+	- javascript personalizado
+	- function() {var arr = {{transactionProducts}}, len = arr.length, i = -1, res = []; while (++i < len) {res[i] = arr[i].sellingPrice;} return res;}
+
+* transactionProductsValuesPipe
+	- javascript personalizado
+	- function() {return {{transactionProductsValues}}.join('|');}	
+
+* VisitorContactInfoEmail
+	- variáveis da camada de dados
+	- visitorContactInfo.0
+
+* transactionId
+	- variáveis da camada  de dados
+	- transactionId
+
+* transactionShipping
+	- variaveis de camada de dados
+	- transactionShipping
+
+* transactionTotal
+	- variaveis de camada de dados
+	- transactionTotal
+
+* transactionInstallments
+	- variaveis de camada de dados
+	- transactionPaymentType.0.installments
+
+* VisitorContactInfoCEP
+	- javascript personalizado
+	- function(){
+		  var retorno = '';
+		  $.ajax({ 
+		      url: '/api/dataentities/CL/search?_fields=id&_where=email={{visitorContactInfoEmail}}', 
+		      dataType: 'json', 
+		      async: false, 
+		      success: function(json){ 
+		        if(json.length > 0){
+		          $.ajax({ 
+		              url: '/api/dataentities/AD/search?_fields=postalCode&_where=userId=' + json[0]["id"], 
+		              dataType: 'json', 
+		              async: false, 
+		              success: function(json){ 
+		              	if(json.length > 0){
+		                  console.log(json[0]["postalCode"]);
+		                  retorno = json[0]["postalCode"];
+		                }
+		              } 
+		          });
+		        }
+		      } 
+		  });
+		  return retorno;
+		}
+
+####### tags #######
+* ebit-rodape 
+	- tag html personalizado
+	- ALL Pages
+	- <script type="text/javascript" id="getSelo" src="https://imgs.ebit.com.br/ebitBR/selo-ebit/js/getSelo.js?{{ebitId}}&lightbox=true"></script>
+
+
+* ebit-enquete-buscape-cpa 
+	- tag html personalizado
+	- OrderPLaced
+	- <param id="ebitParam" value="email={{VisitorContactInfoEmail}}&zipCode={{VisitorContactInfoCEP}}&parcels={{transactionInstallments}}&deliveryTax={{transactionShipping}}&totalSpent={{transactionTotal}}&value={{transactionProductsValuesPipe}}&quantity={{transactionProductsQuantityPipe}}&productName={{transactionProductsNamesPipe}}&transactionId={{transactionId}}&sku={{transactionProductsSkuPipe}}&buscapeId={{buscapeId}}&storeId={{ebitId}}" /><script type="text/javascript" id="getSelo" src="https://imgs.ebit.com.br/ebitBR/selo-ebit/js/getSelo.js?{{ebitId}}&lightbox=true"></script>
+

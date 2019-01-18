@@ -74,7 +74,7 @@
 	  return res;
 	}
 	
-- VisitorContactInfoEmail
+- visitorContactInfoEmail
 	- Grupo: Variáveis definidas pelo usuário
 	- variáveis da camada de dados
 	- visitorContactInfo.0
@@ -191,7 +191,6 @@
 	- Acionamento:
 		- All Pages
 
-
 - FB - AddPaymentInfo
 	-  HTML personalizado
 		<script>fbq('track', 'AddPaymentInfo');</script>
@@ -202,7 +201,7 @@
 
 - FB - AddToCart
 	-  HTML personalizado
-		<script>var precoFinal = parseFloat({{orderFormProductsValue}}).toFixed(2);fbq('track', 'AddToCart', {content_ids: {{orderFormProductsIds}}, content_type: 'product', value: precoFinal,  currency: 'BRL',em: '{{VisitorContactInfoEmail}}'});</script>
+		<script>var precoFinal = parseFloat({{orderFormProductsValue}}).toFixed(2);fbq('track', 'AddToCart', {content_ids: {{orderFormProductsIds}}, content_type: 'product', value: precoFinal,  currency: 'BRL',em: '{{visitorContactInfoEmail}}'});</script>
 	- Sequencia de Tags:
 		Disparar tag antes: FB - Pixel
 	- Acionamento:

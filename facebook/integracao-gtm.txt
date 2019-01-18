@@ -260,7 +260,7 @@
 
 - FB - Purchase
 	-  HTML personalizado
-		<script>fbq('track', 'Purchase', {value: {{transactionTotal}}, currency: 'BRL',em: '{{VisitorContactInfoEmail}}',content_type: 'product',content_ids: {{transactionProductsIds}}});</script>
+		<script>fbq('track', 'Purchase', {value: {{transactionTotal}}, currency: 'BRL',em: '{{visitorContactInfoEmail}}',content_type: 'product',content_ids: {{transactionProductsIds}}});</script>
 	- Sequencia de Tags:
 		Disparar tag antes: FB - Pixel
 	- Acionamento:

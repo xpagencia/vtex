@@ -4,47 +4,7 @@ Acionamento: All Pages
 
 HTML:
 <script>
-  function newsletterAjaxRequest(method, url, postData, target, callback) {
-    if (url != '/no-cache/Newsletter.aspx')
-        $(target).html(newsMakeTitle() + newsletterLoading + newsMakeSpan());
-    $.ajax({
-        type: method,
-        url: url,
-        data: postData,
-        success: function(dataResult) {
-            if (target != null && target != '') {
-                if (url != '/no-cache/Newsletter.aspx')
-                    $(target).html(dataResult);
-                if (dataResult == 'true') {
-                    if (url != '/no-cache/Newsletter.aspx') {
-                        $(target).html(newsMakeSuccessMessage())
-                    } else {
-                        $(target).find("fieldset").hide();
-                        $(target).find("fieldset").after("<div class='newsletter-msg ok'>Obrigado por se cadastrar na loja!<br/>Em breve entraremos em contato com você para oferecer as melhores promoções.</div>")
-                    }
-                } else {
-                    newsMakeBackButtomEvent(target)
-                }
-            }
-            if (callback != null && callback != ''){
-                callback()
-            }
-          	else{
-              callbackNews(dataResult);
-            }
-        },
-        error: function(XMLHttpRequest, textStatus, errorThrown) {
-            newsMakeBackButtomEvent(target)
-        }
-    })
-}
-function callbackNews(dataResult){
-  var email = $(".newsletter-client-email").val();
-  var nome = $(".newsletter-client-name").val();
-  xp_geral.Cookie.Insert('xp-NewsletterLayer-cookie', email, 365);
-}
-
-  var xp_geral = {
+var xp_geral = {
     FormatMoney: function(n, c, d, t) {
         d = d == undefined ? "," : d,
         t = t == undefined ? "." : t,

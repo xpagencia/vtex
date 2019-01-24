@@ -1,23 +1,38 @@
 Tag: xpRDStation - Lead
 Tipo da Tag: Html Personalizado
 Acionamento: All Pages
+Observação: Essa tag precisa ser editada conforme a necessidade da loja.
 
 HTML:
 <script>
   function callbackNews(dataResult, _dados){
     var email = undefined;
+    var dados ={};
     if(_dados == undefined){
       email = $(".newsletter-client-email").val();
       var nome = $(".newsletter-client-name").val();
-      var dados = {
+      dados = {
         "tags": "vtex-newsletter",
         "identificador": "vtex-news-rodape",
         "nome":nome
       }
     }else{
       email = _dados.email;
+      dados = _dados;
     }
     var ajax = xpRDStation.PostLead(email, dados);
     xp_geral.Cookie.Insert('xp-NewsletterLayer-cookie', email, 90);
   }
+  
+  $(".newsletter-layer .enviar").click(function(){
+    genero = ($($("input[name='nl-sexo']")[0]).prop("checked")) ? "F" : "M";
+    dados = {
+      email: $("#nl-email").val(),
+      nome: $("#nl-nome").val(),
+      Genero: genero,
+      tags: "vtex-newsletter",
+      identificador: "vtex-news-popup"
+    }
+    callbackNews(undefined, dados);
+  });
 </script>

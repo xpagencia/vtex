@@ -201,7 +201,15 @@
 
 - FB - AddToCart
 	-  HTML personalizado
-		<script>var precoFinal = parseFloat({{orderFormProductsValue}}).toFixed(2);fbq('track', 'AddToCart', {content_ids: {{orderFormProductsIds}}, content_type: 'product', value: precoFinal,  currency: 'BRL',em: '{{visitorContactInfoEmail}}'});</script>
+		<script>
+var precoFinal = parseFloat({{orderFormProductsValue}}).toFixed(2);
+var content_ids = {{orderFormProductsIds}};
+if(!(precoFinal > 0)){
+	content_ids = [];
+}
+fbq('track', 'AddToCart', {content_ids: content_ids, content_type: 'product', value: precoFinal,  currency: 'BRL',em: '{{visitorContactInfoEmail}}'});
+ 
+</script>
 	- Sequencia de Tags:
 		Disparar tag antes: FB - Pixel
 	- Acionamento:

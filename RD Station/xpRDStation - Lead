@@ -21,7 +21,7 @@ HTML:
       dados = _dados;
     }
     var ajax = xpRDStation.PostLead(email, dados);
-    xp_geral.Cookie.Insert('xp-NewsletterLayer-cookie', email, 90);
+    xp_gtm.Cookie.Insert('xp-NewsletterLayer-cookie', email, 90);
   }
   
   $(".newsletter-layer .enviar").click(function(){

@@ -47,9 +47,9 @@ function IncluirPedido(){
       	"SubCategorias": subcategoriasLista.join(","),
       	"Marcas": marcasLista.join(","),
     	"Produtos": produtosLista.join(","),
-    	"Valor_Subtotal":xp_geral.FormatMoney(valorSubtotal.toFixed(2),2),
-	"Valor_Frete":xp_geral.FormatMoney(valorFrete.toFixed(2),2),      	
-      	"Valor_Pedido":xp_geral.FormatMoney(valorPedido.toFixed(2),2),
+    	"Valor_Subtotal":xp_gtm.FormatMoney(valorSubtotal.toFixed(2),2),
+	"Valor_Frete":xp_gtm.FormatMoney(valorFrete.toFixed(2),2),      	
+      	"Valor_Pedido":xp_gtm.FormatMoney(valorPedido.toFixed(2),2),
 	"formaPagamento": formaPagamento,
       	"UF":UF,
         "Cidade": cidade

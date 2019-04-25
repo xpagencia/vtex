@@ -1,10 +1,10 @@
-Tag: XP_Geral
+Tag: XP_GTM
 Tipo da Tag: Html Personalizado
 Acionamento: All Pages
 
 HTML:
 <script>
-var xp_geral = {
+var xp_gtm = {
     FormatMoney: function(n, c, d, t) {
         d = d == undefined ? "," : d,
         t = t == undefined ? "." : t,

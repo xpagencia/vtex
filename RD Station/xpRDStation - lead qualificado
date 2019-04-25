@@ -4,7 +4,7 @@ Acionamento: ProductView
 
 HTML:
 <script>
-var email = xp_geral.GetEmailSite();
+var email = xp_gtm.GetEmailSite();
 			if (email != undefined) {
 				xpRDStation.PutStatus(email, 1);
 			}

@@ -6,8 +6,9 @@ Acionamento: orderPlaced
 
 <script>
 function IncluirPedido(){
-    var UF = {{Checkout - Cliente - UF}};
-	var cidade = {{Checkout - Cliente - Cidade}};
+/*para preencher a UF e Cidade, será preciso acessar o masterdata para pegar os dados do cliente ou armazenar num cookie */
+    var UF = undefined;
+	var cidade = undefined;
 	var email = {{visitorContactInfo0}};
     var produtos = {{transactionProducts}};
     var valorPedido = {{transactionTotal}};

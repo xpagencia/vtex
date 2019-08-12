@@ -281,6 +281,7 @@ fbq('track', 'AddToCart', {content_ids: content_ids, content_type: 'product', va
 		Disparar tag antes: FB - Pixel
 	- Acionamento:
 		- Pg Busca
+		- Pg Geral
 
 - FB - ViewContent
 	-  HTML personalizado

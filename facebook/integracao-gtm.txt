@@ -150,6 +150,18 @@
 	- disparar:
 		- pageCategory corresponde a RegEx InternalSiteSearch
 
+- pg Home
+	- TIpo: Exibição de página
+	- disparado em: Algumas exibições de página
+	- disparar:
+		- pageCategory corresponde a RegEx Home
+
+- pg Vitrines
+	- TIpo: Exibição de página
+	- disparado em: Algumas exibições de página
+	- disparar:
+		- pageCategory corresponde a RegEx Department|Category|InternalSiteSearch
+
 - pg Geral
 	- TIpo: Exibição de página
 	- disparado em: Algumas exibições de página
@@ -280,8 +292,7 @@ fbq('track', 'AddToCart', {content_ids: content_ids, content_type: 'product', va
 	- Sequencia de Tags:
 		Disparar tag antes: FB - Pixel
 	- Acionamento:
-		- Pg Busca
-		- Pg Geral
+		- Pg Vitrines
 
 - FB - ViewContent
 	-  HTML personalizado

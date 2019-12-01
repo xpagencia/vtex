@@ -85,4 +85,4 @@ Esse método é utilizado para fechar a janela de alerta.
 
 > O método xpFrete.AlertaCarrinho() está ofuscado para proteger a inteligência do software para uso da XP Agência e por acharmos que não há necessidade de edição.
 
-**O uso desta extensão esta sob as regras da lincença: [MIT](http://pt.wikipedia.org/wiki/Licen%C3%A7a_MIT)**
+**O uso desta extensão esta sob as regras da lincença: <a href="http://pt.wikipedia.org/wiki/Licen%C3%A7a_MIT" target="_blank">[MIT]</a>**

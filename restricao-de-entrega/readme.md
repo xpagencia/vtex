@@ -39,6 +39,7 @@ $(window).load(function(){
 })
 ```
 ----------
+
 ## Métodos
 
 ### xpAlerta.AlertaCarrinho(msg, titulo, adicional);
@@ -71,10 +72,10 @@ Esse método é utilizado para fechar a janela de alerta.
 
 ----------
 
+### Atenção
 > As extensões da plataforma VTEX são plugins javascript criados por desenvolvedores de interface ou pelo VTEX Lab (Laboratório de Inovações da VTEX) que podem ser inseridas em sua loja. Existem extensões gratuitas com código aberto - Open Source - e extensões pagas.
 > Recomendamos que a instalação seja realizada pelos profissionais e empresas certificados pela VTEX. Porém, qualquer profissional de CSS, JavaScript e HTML pode executar esta tarefa.
 
-### Atenção
 > Esta extensão é mantida por [XP Agência](http://www.xpagencia.com.br) e não possui suporte gratuito.  
 > O código fonte deste componente não pode ser vendido ou comercializado, ele esta livre para uso comercial mas só podem haver cobranças com relação à mão de obra necessária a sua instalação e não por sua utilização.  
 > O correto funcionamento deste script não é de responsabilidade do seu desenvolvedor, mantenedor ou constribuidores.  

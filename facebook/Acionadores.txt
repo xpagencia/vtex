@@ -1,0 +1,78 @@
+### acionadores GTM ###
+- addToCart
+	- TIpo: Clique - todos os elementos
+	- disparar:
+		Click classes - Corresponde a RegEx buy-button|buy-button-ref
+
+- checkout - payment
+	- Tipo: Evento Personalizado
+	- Nome do evento: payment
+	- disparar:
+		Todos os eventos personalizados
+
+- checkout - profile
+	- Tipo: Evento Personalizado
+	- Nome do evento: profile
+	- disparar:
+		Todos os eventos personalizados
+
+- checkout - shipping
+	- Tipo: Evento Personalizado
+	- Nome do evento: shipping
+	- disparar:
+		Todos os eventos personalizados
+
+- checkout - email
+	- Tipo: Evento Personalizado
+	- Nome do evento: email
+	- disparar:
+		Todos os eventos personalizados
+
+- checkout - cart
+	- Tipo: Evento Personalizado
+	- Nome do evento: cart
+	- disparar:
+		Todos os eventos personalizados
+
+- orderPlaced Trigger
+	- Tipo: Evento Personalizado
+	- Nome do evento: orderPlaced
+	- disparar:
+		Todos os eventos personalizados
+
+- pg Busca
+	- TIpo: Exibição de página
+	- disparado em: Algumas exibições de página
+	- disparar:
+		- pageCategory corresponde a RegEx InternalSiteSearch
+
+- pg Home
+	- TIpo: Exibição de página
+	- disparado em: Algumas exibições de página
+	- disparar:
+		- pageCategory corresponde a RegEx Home
+
+- pg Vitrines
+	- TIpo: Exibição de página
+	- disparado em: Algumas exibições de página
+	- disparar:
+		- pageCategory corresponde a RegEx Department|Category|InternalSiteSearch
+
+- pg Geral
+	- TIpo: Exibição de página
+	- disparado em: Algumas exibições de página
+	- disparar:
+		- pageCategory corresponde a RegEx Department|Category|Home|InternalSiteSearch
+
+- pg Others
+	- TIpo: Evento personalizado
+	- Nome do evento: otherView
+	- disparar:
+		Todos os eventos personalizados
+
+- pg Produto
+	- TIpo: Exibição de página
+	- disparado em: Algumas exibições de página
+	- disparar:
+		- pageCategory corresponde a RegEx Product
+

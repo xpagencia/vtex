@@ -54,11 +54,28 @@
 	- variável de camada de dados
 	- skuStocks
 
+- productCategoryName
+	- - Grupo: Variáveis definidas pelo usuário
+	- variável de camada de dados
+	- productCategoryName
+	
+- productDepartmentName
+	- - Grupo: Variáveis definidas pelo usuário
+	- variável de camada de dados
+	- productDepartmentName
+	
 - visitorContactInfoEmail
 	- Grupo: Variáveis definidas pelo usuário
 	- variáveis da camada de dados
 	- visitorContactInfo.0
 
+- productCategoryTreeName
+	- Grupo: Variáveis definidas pelo usuário
+	- Tipo: Javascript personalizado
+	- function(){
+	  return {{productDepartmentName}} + "/" + {{productCategoryName}};
+	}
+	
 - ProductsOrderId
 	- Grupo: Variáveis definidas pelo usuário
 	- Tipo: Javascript personalizado
@@ -135,6 +152,12 @@
 - checkout - email
 	- Tipo: Evento Personalizado
 	- Nome do evento: email
+	- disparar:
+		Todos os eventos personalizados
+
+- checkout - cart
+	- Tipo: Evento Personalizado
+	- Nome do evento: cart
 	- disparar:
 		Todos os eventos personalizados
 
@@ -217,9 +240,10 @@
 var precoFinal = parseFloat({{orderFormProductsValue}}).toFixed(2);
 var content_ids = {{orderFormProductsIds}};
 if(precoFinal > 0){
-	fbq('track', 'AddToCart', {content_ids: content_ids, content_type: 'product', value: precoFinal,  currency: 'BRL'});
+	fbq('track', 'AddToCart', {content_ids: content_ids, content_name: {{productName}}, content_category: {{productCategoryName}}, content_type: 'product', value: precoFinal,  currency: 'BRL'});
 }
  </script>
+
 	- Sequencia de Tags:
 		Disparar tag antes: FB - Pixel
 	- Acionamento:
@@ -293,6 +317,9 @@ if(precoFinal > 0){
 
 		  }
 		</script>
+		<noscript>
+			<img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id={{transactionTotal}}&ev=PageView&noscript=1"/>
+		</noscript>
 
 	- Sequencia de Tags:
 		Disparar tag antes: FB - Pixel
@@ -309,7 +336,7 @@ if(precoFinal > 0){
 
 - FB - ViewContent
 	-  HTML personalizado
-		<script>var precoFinal = parseFloat({{productPriceTo}}).toFixed(2);fbq('track', 'ViewContent', {value: precoFinal,	currency: 'BRL',content_name: '{{productName}}',content_ids: {{productSkuIds}},content_type: 'product'});</script>
+		<script>var precoFinal = parseFloat({{productPriceTo}}).toFixed(2);fbq('track', 'ViewContent', {value: precoFinal,	currency: 'BRL',content_name: '{{productName}}', content_category: {{productCategoryTreeName}},content_ids: {{productSkuIds}},content_type: 'product'});</script>
 	- Sequencia de Tags:
 		Disparar tag antes: FB - Pixel
 	- Acionamento:

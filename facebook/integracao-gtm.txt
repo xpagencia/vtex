@@ -34,6 +34,31 @@
 	- Tipo: Variável da camada de dados
 	- Nome da variável: transactionTotal
 	
+- orderFormProducts
+	- Grupo: Variáveis definidas pelo usuário
+	- Tipo: variáveis da camada de dados
+	- orderFormProducts
+
+- shelfProductIds
+	- Grupo: Variáveis definidas pelo usuário
+	- variavel da camada de dados
+	- shelfProductIds
+	
+- siteSearchTerm
+	- Grupo: Variáveis definidas pelo usuário
+	- variavel de camada de dados
+	- siteSearchTerm
+	
+- skuStocks
+	- Grupo: Variáveis definidas pelo usuário
+	- variável de camada de dados
+	- skuStocks
+
+- visitorContactInfoEmail
+	- Grupo: Variáveis definidas pelo usuário
+	- variáveis da camada de dados
+	- visitorContactInfo.0
+
 - ProductsOrderId
 	- Grupo: Variáveis definidas pelo usuário
 	- Tipo: Javascript personalizado
@@ -42,11 +67,6 @@
 	  while (++i < len) {res[i] = arr[i].id;};
 	  return res;
 	}
-	
-- orderFormProducts
-	- Grupo: Variáveis definidas pelo usuário
-	- Tipo: variáveis da camada de dados
-	- orderFormProducts
 	
 - orderFormProductsIds
 	- Grupo: Variáveis definidas pelo usuário
@@ -74,26 +94,6 @@
 	  return res;
 	}
 	
-- visitorContactInfoEmail
-	- Grupo: Variáveis definidas pelo usuário
-	- variáveis da camada de dados
-	- visitorContactInfo.0
-	
-- shelfProductIds
-	- Grupo: Variáveis definidas pelo usuário
-	- variavel da camada de dados
-	- shelfProductIds
-	
-- siteSearchTerm
-	- Grupo: Variáveis definidas pelo usuário
-	- variavel de camada de dados
-	- siteSearchTerm
-	
-- skuStocks
-	- Grupo: Variáveis definidas pelo usuário
-	- variável de camada de dados
-	- skuStocks
-	
 - productSkuIds
 	- Grupo: Variáveis definidas pelo usuário
 	- javascript personalizado
@@ -103,10 +103,10 @@
 	- Grupo: Variáveis definidas pelo usuário
 	- javascript personalizado
 	- function() {
-  var arr = {{transactionProducts}}, len = arr.length, i = -1, res = [];
-  while (++i < len) {res[i] = arr[i].sku;};
-  return res;
-}
+	  var arr = {{transactionProducts}}, len = arr.length, i = -1, res = [];
+	  while (++i < len) {res[i] = arr[i].sku;};
+	  return res;
+	}
 
 ### acionadores GTM ###
 - addToCart
@@ -216,12 +216,10 @@
 		<script>
 var precoFinal = parseFloat({{orderFormProductsValue}}).toFixed(2);
 var content_ids = {{orderFormProductsIds}};
-if(!(precoFinal > 0)){
-	content_ids = [];
+if(precoFinal > 0){
+	fbq('track', 'AddToCart', {content_ids: content_ids, content_type: 'product', value: precoFinal,  currency: 'BRL'});
 }
-fbq('track', 'AddToCart', {content_ids: content_ids, content_type: 'product', value: precoFinal,  currency: 'BRL',em: '{{visitorContactInfoEmail}}'});
- 
-</script>
+ </script>
 	- Sequencia de Tags:
 		Disparar tag antes: FB - Pixel
 	- Acionamento:
@@ -241,7 +239,15 @@ fbq('track', 'AddToCart', {content_ids: content_ids, content_type: 'product', va
 
 - FB - CompleteRegistration
 	-  HTML personalizado
-		<script>fbq('track', 'CompleteRegistration');</script>
+		<script>
+		  var precoFinal = parseFloat({{orderFormProductsValue}}).toFixed(2);
+		  if(precoFinal > 0){
+			fbq('track', 'CompleteRegistration', {value: precoFinal,  currency: 'BRL'});
+		  }else{
+		    fbq('track', 'CompleteRegistration');
+		  }
+		</script>
+
 	- Sequencia de Tags:
 		Disparar tag antes: FB - Pixel
 	- Acionamento:
@@ -280,7 +286,14 @@ fbq('track', 'AddToCart', {content_ids: content_ids, content_type: 'product', va
 
 - FB - Purchase
 	-  HTML personalizado
-		<script>fbq('track', 'Purchase', {value: {{transactionTotal}}, currency: 'BRL',em: '{{visitorContactInfoEmail}}',content_type: 'product',content_ids: {{transactionProductsIds}}});</script>
+		<script>
+		  var precoFinal = parseFloat({{transactionTotal}}).toFixed(2);
+		  if(precoFinal > 0){
+		  fbq('track', 'Purchase', {value: precoFinal, currency: 'BRL',content_type: 'product',content_ids: {{transactionProductsIds}}});
+
+		  }
+		</script>
+
 	- Sequencia de Tags:
 		Disparar tag antes: FB - Pixel
 	- Acionamento:

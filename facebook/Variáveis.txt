@@ -1,0 +1,126 @@
+### variaveis GTM ###
+- click classes:
+	- Grupo: Variáveis incorporadas
+	- Tipo: Variável da camada de dados
+	- nome da variável:gtm.elementClasses
+
+- productName
+	- Grupo: Variáveis definidas pelo usuário
+	- Tipo: Variável da camada de dados
+	- Nome da variável: productName
+
+- pageCategory
+	- Grupo: Variáveis definidas pelo usuário
+	- Tipo: Variável da camada de dados
+	- Nome da variável: pageCategory
+
+- productId
+	- Grupo: Variáveis definidas pelo usuário
+	- Tipo: Variável da camada de dados
+	- Nome da variável: productId
+
+- productPriceTo
+	- Grupo: Variáveis definidas pelo usuário
+	- Tipo: Variável da camada de dados
+	- Nome da variável: productPriceTo
+
+- transactionId
+	- Grupo: Variáveis definidas pelo usuário
+	- Tipo: Variável da camada de dados
+	- Nome da variável: transactionId
+
+- transactionTotal
+	- Grupo: Variáveis definidas pelo usuário
+	- Tipo: Variável da camada de dados
+	- Nome da variável: transactionTotal
+	
+- orderFormProducts
+	- Grupo: Variáveis definidas pelo usuário
+	- Tipo: variáveis da camada de dados
+	- orderFormProducts
+
+- shelfProductIds
+	- Grupo: Variáveis definidas pelo usuário
+	- variavel da camada de dados
+	- shelfProductIds
+	
+- siteSearchTerm
+	- Grupo: Variáveis definidas pelo usuário
+	- variavel de camada de dados
+	- siteSearchTerm
+	
+- skuStocks
+	- Grupo: Variáveis definidas pelo usuário
+	- variável de camada de dados
+	- skuStocks
+
+- productCategoryName
+	- - Grupo: Variáveis definidas pelo usuário
+	- variável de camada de dados
+	- productCategoryName
+	
+- productDepartmentName
+	- - Grupo: Variáveis definidas pelo usuário
+	- variável de camada de dados
+	- productDepartmentName
+	
+- visitorContactInfoEmail
+	- Grupo: Variáveis definidas pelo usuário
+	- variáveis da camada de dados
+	- visitorContactInfo.0
+
+- productCategoryTreeName
+	- Grupo: Variáveis definidas pelo usuário
+	- Tipo: Javascript personalizado
+	- function(){
+	  return {{productDepartmentName}} + "/" + {{productCategoryName}};
+	}
+	
+- ProductsOrderId
+	- Grupo: Variáveis definidas pelo usuário
+	- Tipo: Javascript personalizado
+	- function() {
+	  var arr = {{transactionProducts}}, len = arr.length, i = -1, res = [];
+	  while (++i < len) {res[i] = arr[i].id;};
+	  return res;
+	}
+	
+- orderFormProductsIds
+	- Grupo: Variáveis definidas pelo usuário
+	- Tipo: Javascript Personalizado
+	- function() {
+	  var arr = {{orderFormProducts}}, len = arr.length, i = -1, res = [];
+	  while (++i < len) {res[i] = arr[i].sku;};
+	  return res;
+	}
+
+- orderFormProductsValue
+	- Grupo: Variáveis definidas pelo usuário
+	- Tipo: Javascript Personalizado
+	- function() {
+	  var arr = {{orderFormProducts}}, len = arr.length, i = -1, subtotal = 0;
+	  while (++i < len) {if(arr[i].sellingPrice != undefined) subtotal += arr[i].sellingPrice;};
+	  return subtotal;
+	}
+- ProductsCartId
+	- Grupo: Variáveis definidas pelo usuário
+	- TIpo: Javascript personalizado
+	- function() {
+	  var arr = {{orderFormProducts}}, len = arr.length, i = -1, res = [];
+	  while (++i < len) {res[i] = arr[i].id;};
+	  return res;
+	}
+	
+- productSkuIds
+	- Grupo: Variáveis definidas pelo usuário
+	- javascript personalizado
+	- function(){return Object.keys({{skuStocks}});}
+	
+- transactionProductsIds
+	- Grupo: Variáveis definidas pelo usuário
+	- javascript personalizado
+	- function() {
+	  var arr = {{transactionProducts}}, len = arr.length, i = -1, res = [];
+	  while (++i < len) {res[i] = arr[i].sku;};
+	  return res;
+	}

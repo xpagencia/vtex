@@ -1,3 +1,6 @@
+Integração do Pixel do Facebook com a VTEX
+------------------------------------------
+
 A configuração do pixel do Facebook para integração com a VTEX é toda feita através do Google Tag Manager(GTM).
 Não há a necessidade de executar nada no admin da VTEX.
 Aqui, dividi a configuração do GTM em 3 partes: Variáveis, Acionadores e Tags.

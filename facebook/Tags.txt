@@ -1,0 +1,137 @@
+### tags do GTM ###
+- FB - Pixel
+	-  HTML personalizado
+		<!-- Facebook Pixel Code -->
+		<script>
+		!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+		n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+		n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+		t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+		document,'script','https://connect.facebook.net/en_US/fbevents.js');
+		fbq('init', '000000000000000000000'); // Insert your pixel ID here.
+		fbq('track', 'PageView');
+		</script>
+		<noscript><img height="1" width="1" style="display:none"
+		src="https://www.facebook.com/tr?id=000000000000000000000&ev=PageView&noscript=1"
+		/></noscript>
+		<!-- DO NOT MODIFY -->
+		<!-- End Facebook Pixel Code -->
+
+	- Acionamento:
+		- All Pages
+
+- FB - AddPaymentInfo
+	-  HTML personalizado
+		<script>fbq('track', 'AddPaymentInfo');</script>
+	- Sequencia de Tags:
+		Disparar tag antes: FB - Pixel
+	- Acionamento:
+		- checkout - payment
+
+- FB - AddToCart
+	-  HTML personalizado
+		<script>
+var precoFinal = parseFloat({{orderFormProductsValue}}).toFixed(2);
+var content_ids = {{orderFormProductsIds}};
+if(precoFinal > 0){
+	fbq('track', 'AddToCart', {content_ids: content_ids, content_name: {{productName}}, content_category: {{productCategoryName}}, content_type: 'product', value: precoFinal,  currency: 'BRL'});
+}
+ </script>
+
+	- Sequencia de Tags:
+		Disparar tag antes: FB - Pixel
+	- Acionamento:
+		- addToCart
+		- checkout - cart
+
+- FB - checkout inicio
+	-  HTML personalizado
+		<script>fbq('track', 'InitiateCheckout');</script>
+	- Opções de disparo da tag
+		- Uma vez por página
+	- Sequencia de Tags:
+		Disparar tag antes: FB - Pixel
+	- Acionamento:
+		- checkout - profile
+		- checkout - email
+
+- FB - CompleteRegistration
+	-  HTML personalizado
+		<script>
+		  var precoFinal = parseFloat({{orderFormProductsValue}}).toFixed(2);
+		  if(precoFinal > 0){
+			fbq('track', 'CompleteRegistration', {value: precoFinal,  currency: 'BRL'});
+		  }else{
+		    fbq('track', 'CompleteRegistration');
+		  }
+		</script>
+
+	- Sequencia de Tags:
+		Disparar tag antes: FB - Pixel
+	- Acionamento:
+		- checkout - shipping
+
+- FB - Order Placed
+	-  HTML personalizado
+		<!-- Facebook Conversion Code for Conclusões de compra - Loungerie -->
+		‪<script>(function() {
+		  var _fbq = window._fbq || (window._fbq = []);
+		  if (!_fbq.loaded) {
+		    var fbds = document.createElement('script');
+		    fbds.async = true;
+		    fbds.src = '//connect.facebook.net/en_US/fbds.js';
+		    var s = document.getElementsByTagName('script')[0];
+		    s.parentNode.insertBefore(fbds, s);
+		    _fbq.loaded = true;
+		  }
+		})();
+		window._fbq = window._fbq || [];
+		window._fbq.push(['track', '{{transactionId}}', {'value':'{{transactionTotal}}','currency':'BRL'}]);
+		</script>
+		<noscript><img height="1" width="1" alt="" style="display:none" src="https://www.facebook.com/tr?ev={{transactionId}}&cd[value]={{transactionTotal}}&cd[currency]=BRL&noscript=1" /></noscript>
+	- Sequencia de Tags:
+		Disparar tag antes: FB - Pixel
+	- Acionamento:
+		- orderPlaced Trigger
+
+- FB - Other
+	-  HTML personalizado
+		<script>fbq('track', 'Other');</script>
+	- Sequencia de Tags:
+		Disparar tag antes: FB - Pixel
+	- Acionamento:
+		- Pg Others
+
+- FB - Purchase
+	-  HTML personalizado
+		<script>
+		  var precoFinal = parseFloat({{transactionTotal}}).toFixed(2);
+		  if(precoFinal > 0){
+		  fbq('track', 'Purchase', {value: precoFinal, currency: 'BRL',content_type: 'product',content_ids: {{transactionProductsIds}}});
+
+		  }
+		</script>
+		<noscript>
+			<img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id={{transactionTotal}}&ev=PageView&noscript=1"/>
+		</noscript>
+
+	- Sequencia de Tags:
+		Disparar tag antes: FB - Pixel
+	- Acionamento:
+		- OrderPlaced Trigger
+
+- FB - Search
+	-  HTML personalizado
+		<script>fbq('track', 'Search',{search_string: '{{siteSearchTerm}}', content_category: 'Product Search', content_ids: '{{shelfProductIds}}'});</script>
+	- Sequencia de Tags:
+		Disparar tag antes: FB - Pixel
+	- Acionamento:
+		- Pg Vitrines
+
+- FB - ViewContent
+	-  HTML personalizado
+		<script>var precoFinal = parseFloat({{productPriceTo}}).toFixed(2);fbq('track', 'ViewContent', {value: precoFinal,	currency: 'BRL',content_name: '{{productName}}', content_category: {{productCategoryTreeName}},content_ids: {{productSkuIds}},content_type: 'product'});</script>
+	- Sequencia de Tags:
+		Disparar tag antes: FB - Pixel
+	- Acionamento:
+		- Pg Produto

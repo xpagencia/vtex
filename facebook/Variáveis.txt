@@ -4,6 +4,11 @@
 	- Tipo: Variável da camada de dados
 	- nome da variável:gtm.elementClasses
 
+- transactionProducts
+	- Grupo: Variáveis definidas pelo usuário
+	- Tipo: Variável da camada de dados
+	- Nome da variável: transactionProducts
+
 - productName
 	- Grupo: Variáveis definidas pelo usuário
 	- Tipo: Variável da camada de dados

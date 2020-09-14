@@ -52,8 +52,11 @@ if(precoFinal > 0){
 	- Sequencia de Tags:
 		Disparar tag antes: FB - Pixel
 	- Acionamento:
+	existem 2 formas de criar o acionamento:
+	1) verificando a página de destino:
 		- checkout - profile
 		- checkout - email
+	2) clicando no acionador "Clique - Checkout"
 
 - FB - CompleteRegistration
 	-  HTML personalizado

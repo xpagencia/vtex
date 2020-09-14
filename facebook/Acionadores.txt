@@ -76,3 +76,8 @@
 	- disparar:
 		- pageCategory corresponde a RegEx Product
 
+- Clique - Checkout
+	- TIpo: Clique apenas links
+	- disparado em: Algumas exibições de página
+	- disparar:
+		- Click URL contém #/orderform

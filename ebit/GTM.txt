@@ -70,27 +70,11 @@
 * visitorContactInfoCEP
 	- javascript personalizado
 	- function(){
-		  var retorno = '';
-		  $.ajax({ 
-		      url: '/api/dataentities/CL/search?_fields=id&_where=email={{visitorContactInfoEmail}}', 
-		      dataType: 'json', 
-		      async: false, 
-		      success: function(json){ 
-		        if(json.length > 0){
-		          $.ajax({ 
-		              url: '/api/dataentities/AD/search?_fields=postalCode&_where=userId=' + json[0]["id"], 
-		              dataType: 'json', 
-		              async: false, 
-		              success: function(json){ 
-		              	if(json.length > 0){
-		                  console.log(json[0]["postalCode"]);
-		                  retorno = json[0]["postalCode"];
-		                }
-		              } 
-		          });
-		        }
-		      } 
-		  });
+		  var retorno = "";
+		  var checkout = JSON.parse(sessionStorage.getItem("checkout"));
+		  if(checkout && checkout.user && checkout.user.postalCode){
+		    retorno = checkout.user.postalCode || "";
+		  };
 		  return retorno;
 		}
 
@@ -99,15 +83,32 @@
 	- evento personalizado
 	- orderPlaced
 
+* checkout-payment
+	- evento personalizado
+	- payment
+
 ####### tags #######
 * ebit-rodape 
 	- tag html personalizado
 	- ALL Pages
 	- <script type="text/javascript" id="getSelo" src="https://imgs.ebit.com.br/ebitBR/selo-ebit/js/getSelo.js?{{ebitId}}&lightbox=true"></script>
 
-
 * ebit-enquete-buscape-cpa 
 	- tag html personalizado
 	- OrderPLaced
 	- <param id="ebitParam" value="email={{visitorContactInfoEmail}}&zipCode={{visitorContactInfoCEP}}&parcels={{transactionInstallments}}&deliveryTax={{transactionShipping}}&totalSpent={{transactionTotal}}&value={{transactionProductsValuesPipe}}&quantity={{transactionProductsQuantityPipe}}&productName={{transactionProductsNamesPipe}}&transactionId={{transactionId}}&sku={{transactionProductsSkuPipe}}&buscapeId={{buscapeId}}&storeId={{ebitId}}" /><script type="text/javascript" id="getSelo" src="https://imgs.ebit.com.br/ebitBR/selo-ebit/js/getSelo.js?{{ebitId}}&lightbox=true"></script><script>setTimeout(function(){$("body").on("click", ".dark,.btFechar", function(){$(".dark,.boxLight").hide();})},500);</script>
 
+* ebit-checkout-user
+	- tag html personalizado
+	- checkout-payment
+	- <script>
+		  var checkout = sessionStorage.getItem("checkout");
+		  if(!checkout){
+		    var address = vtexjs.checkout.orderForm.shippingData.address;
+		    if(address.postalCode.indexOf("*") == -1){
+		      sessionStorage.setItem("checkout", JSON.stringify({user:{postalCode: address.postalCode}}));
+		    }else{
+		      console.warn("Usuário já existia na base. Por isso o cep não foi consultado.");
+		    }
+		  }
+		</script>

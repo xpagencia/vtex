@@ -1,4 +1,4 @@
-# Impedir qualquuer pixel de reprocessar no orderPlaced
+# Impedir qualquer pixel de reprocessar no orderPlaced
 
 <p>Para que o analytics, purchase do facebook ou qualquer outro pixel não reprocesse na tela de orderplaced da VTEX, criamos um conjunto de comandos (tags, acionadores e variáveis) no GTM (Google Tag Manager).</p>
 <p>Esses "comandos", farão com que os pixels sejam processados sempre que não haja na url o hash #processado=true. Porém, quando esse hash não estiver na url, uma tag do GTM irá incluíla.</p>

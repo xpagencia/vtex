@@ -1,0 +1,145 @@
+{
+    "exportFormatVersion": 2,
+    "exportTime": "2021-04-27 10:49:31",
+    "containerVersion": {
+        "path": "accounts/6001319772/containers/31557616/versions/0",
+        "accountId": "6001319772",
+        "containerId": "31557616",
+        "containerVersionId": "0",
+        "container": {
+            "path": "accounts/6001319772/containers/31557616",
+            "accountId": "6001319772",
+            "containerId": "31557616",
+            "name": "www.pointcalcados.com.br",
+            "publicId": "GTM-WKG45SQ",
+            "usageContext": [
+                "WEB"
+            ],
+            "fingerprint": "1591208081340",
+            "tagManagerUrl": "https://tagmanager.google.com/#/container/accounts/6001319772/containers/31557616/workspaces?apiLink=container"
+        },
+        "tag": [
+            {
+                "accountId": "6001319772",
+                "containerId": "31557616",
+                "tagId": "65",
+                "name": "orderplaced - processado",
+                "type": "html",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "html",
+                        "value": "<script>\n  if(window.location.href.indexOf(\"processado=true\") == -1){\n    window.location.href = window.location.href.concat(\"#processado=true\");\n  }\n</script>"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "supportDocumentWrite",
+                        "value": "false"
+                    }
+                ],
+                "fingerprint": "1619518368653",
+                "firingTriggerId": [
+                    "5"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                }
+            }
+        ],
+        "trigger": [
+            {
+                "accountId": "6001319772",
+                "containerId": "31557616",
+                "triggerId": "5",
+                "name": "orderPlaced",
+                "type": "CUSTOM_EVENT",
+                "customEventFilter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{_event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "orderPlaced"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1594937904349"
+            },
+            {
+                "accountId": "6001319772",
+                "containerId": "31557616",
+                "triggerId": "64",
+                "name": "orderPlaced validando processado=true",
+                "type": "CUSTOM_EVENT",
+                "customEventFilter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{_event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "orderPlaced"
+                            }
+                        ]
+                    }
+                ],
+                "filter": [
+                    {
+                        "type": "CONTAINS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{Location.hash}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "#processado=true"
+                            },
+                            {
+                                "type": "BOOLEAN",
+                                "key": "negate",
+                                "value": "true"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1619520097268"
+            }
+        ],
+        "variable": [
+            {
+                "accountId": "6001319772",
+                "containerId": "31557616",
+                "variableId": "66",
+                "name": "Location.hash",
+                "type": "jsm",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "javascript",
+                        "value": "function(){\n  return window.location.hash;\n}"
+                    }
+                ],
+                "fingerprint": "1619519490619",
+                "formatValue": {}
+            }
+        ],
+        "fingerprint": "1619520571755",
+        "tagManagerUrl": "https://tagmanager.google.com/#/versions/accounts/6001319772/containers/31557616/versions/0?apiLink=version"
+    }
+}

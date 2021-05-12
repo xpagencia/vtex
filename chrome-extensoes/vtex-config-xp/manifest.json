@@ -1,0 +1,30 @@
+{
+    "name": "VTEX-Config - XP",
+    "description": "Quando o site for VTEX, a extensão exibirá algumas informações para ajudar.",
+    "version": "0.0.0.1",
+    "manifest_version": 3,
+    "background": {
+        "service_worker": "sw-init.js"
+    },
+    "permissions": [
+        "storage",
+        "activeTab",
+        "scripting"
+    ],
+    "action": {
+        "default_popup": "/html/popup.html",
+        "default_icon": {
+            "16": "/images/vtex-config-xp-16.png",
+            "32": "/images/vtex-config-xp-32.png",
+            "48": "/images/vtex-config-xp-48.png",
+            "128": "/images/vtex-config-xp-128.png"
+        }
+    },
+    "icons": {
+        "16": "/images/vtex-config-xp-16.png",
+        "32": "/images/vtex-config-xp-32.png",
+        "48": "/images/vtex-config-xp-48.png",
+        "128": "/images/vtex-config-xp-128.png"
+    },
+    "options_page": "/html/options.html"
+}

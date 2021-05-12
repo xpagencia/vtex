@@ -1,0 +1,7 @@
+h1{
+  display: block;
+  white-space: nowrap;
+}
+fieldset .item{
+  white-space: nowrap;
+}

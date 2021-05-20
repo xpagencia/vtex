@@ -15,6 +15,6 @@ Se for VTEX, informa se é VTEX.CMS ou VTEX.IO
 
 ### Em caso de dúvidas:
 
-e-mail: santos@xpagencia.com.br
-Whatsapp: 47 3027-5676
-skype: fabiosantosrj
+Usem o issues https://github.com/xpagencia/vtex/issues que respondo em até 5 dias.
+
+Fiquem com Deus.

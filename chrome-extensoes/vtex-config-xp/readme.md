@@ -5,7 +5,7 @@ Se for VTEX, informa se é VTEX.CMS ou VTEX.IO
 
 ## Para instalar no Chrome, siga os passos abaixo:
 
-1. Faça o download do zip aqui no Git.
+1. Faça o download do zip aqui no Git em <a href="https://github.com/xpagencia/vtex/raw/master/chrome-extensoes/producao/vtex-config-xp.zip">https://github.com/xpagencia/vtex/raw/master/chrome-extensoes/producao/vtex-config-xp.zip</a>.
 2. Descompacte o zip numa pasta local do seu PC.
 3. Abra a página chrome://extensions/
 4. Habilite o modo desenvolvedor do lado direito superior da tela.

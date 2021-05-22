@@ -16,7 +16,7 @@ Se for VTEX, informa se é VTEX.CMS ou VTEX.IO
 ## Política de privacidade
 
 Nós não lemos, armazenamos ou compartilhamos nenhuma informação dos seus dados pessoais.
-Mais informações em: <a href="https://github.com/xpagencia/vtex/tree/master/chrome-extensoes/vtex-config-xp">https://github.com/xpagencia/vtex/tree/master/chrome-extensoes/vtex-config-xp</a>
+Mais informações em: <a href="https://github.com/xpagencia/vtex/blob/master/chrome-extensoes/vtex-config-xp/docs/politica-privacidade.md">https://github.com/xpagencia/vtex/blob/master/chrome-extensoes/vtex-config-xp/docs/politica-privacidade.md</a>
 
 ### Em caso de dúvidas:
 

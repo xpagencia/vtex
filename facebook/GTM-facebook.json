@@ -1,0 +1,1265 @@
+{
+    "exportFormatVersion": 2,
+    "exportTime": "2021-06-17 21:27:09",
+    "containerVersion": {
+        "path": "accounts/76251039/containers/47125944/versions/0",
+        "accountId": "76251039",
+        "containerId": "47125944",
+        "containerVersionId": "0",
+        "container": {
+            "path": "accounts/76251039/containers/47125944",
+            "accountId": "76251039",
+            "containerId": "47125944",
+            "name": "exportação de ferramentas",
+            "publicId": "GTM-P8X8LKZ",
+            "usageContext": [
+                "WEB"
+            ],
+            "fingerprint": "1623964418700",
+            "tagManagerUrl": "https://tagmanager.google.com/#/container/accounts/76251039/containers/47125944/workspaces?apiLink=container"
+        },
+        "tag": [
+            {
+                "accountId": "76251039",
+                "containerId": "47125944",
+                "tagId": "19",
+                "name": "FB - .Pixel",
+                "type": "html",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "html",
+                        "value": "<!-- Facebook Pixel Code -->\n<script>\n  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?\n    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;\n                           n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;\n                           t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,\n                                                                                                  document,'script','https://connect.facebook.net/en_US/fbevents.js');\n  fbq('init', '{{FB-id}}'); // Insert your pixel ID here.\n  fbq('track', 'PageView');\n</script>\n<noscript><img height=\"1\" width=\"1\" style=\"display:none\"\n               src=\"https://www.facebook.com/tr?id={{FB-id}}&ev=PageView&noscript=1\"\n               /></noscript>\n<!-- DO NOT MODIFY -->\n<!-- End Facebook Pixel Code -->"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "supportDocumentWrite",
+                        "value": "false"
+                    }
+                ],
+                "fingerprint": "1623964968094",
+                "firingTriggerId": [
+                    "2147479553"
+                ],
+                "parentFolderId": "49",
+                "tagFiringOption": "ONCE_PER_LOAD",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                }
+            },
+            {
+                "accountId": "76251039",
+                "containerId": "47125944",
+                "tagId": "20",
+                "name": "FB - Search",
+                "type": "html",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "html",
+                        "value": "<script>fbq('track', 'Search',{search_string: '{{siteSearchTerm}}', content_category: 'Product Search', content_ids: '{{shelfProductIds}}'});</script>"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "supportDocumentWrite",
+                        "value": "false"
+                    }
+                ],
+                "fingerprint": "1623964968094",
+                "firingTriggerId": [
+                    "8",
+                    "18"
+                ],
+                "setupTag": [
+                    {
+                        "tagName": "FB - .Pixel",
+                        "stopOnSetupFailure": true
+                    }
+                ],
+                "parentFolderId": "49",
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                }
+            },
+            {
+                "accountId": "76251039",
+                "containerId": "47125944",
+                "tagId": "27",
+                "name": "FB - AddToCart",
+                "type": "html",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "html",
+                        "value": "<script>\nvar precoFinal = parseFloat({{orderFormProductsValue}}).toFixed(2);\nvar content_ids = {{orderFormProductsIds}};\nif(!(precoFinal > 0)){\n\tcontent_ids = [];\n}\nfbq('track', 'AddToCart', {content_ids: content_ids, content_type: 'product', value: precoFinal,  currency: 'BRL',em: '{{visitorContactInfoEmail}}'});\n \n</script>"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "supportDocumentWrite",
+                        "value": "false"
+                    }
+                ],
+                "fingerprint": "1623964968092",
+                "firingTriggerId": [
+                    "25",
+                    "13"
+                ],
+                "setupTag": [
+                    {
+                        "tagName": "FB - .Pixel"
+                    }
+                ],
+                "parentFolderId": "49",
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                }
+            },
+            {
+                "accountId": "76251039",
+                "containerId": "47125944",
+                "tagId": "30",
+                "name": "FB - Order Placed",
+                "type": "html",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "html",
+                        "value": "<!-- Facebook Conversion Code for Conclusões de compra - Loungerie -->\n\t\t‪<script>(function() {\n\t\t  var _fbq = window._fbq || (window._fbq = []);\n\t\t  if (!_fbq.loaded) {\n\t\t    var fbds = document.createElement('script');\n\t\t    fbds.async = true;\n\t\t    fbds.src = '//connect.facebook.net/en_US/fbds.js';\n\t\t    var s = document.getElementsByTagName('script')[0];\n\t\t    s.parentNode.insertBefore(fbds, s);\n\t\t    _fbq.loaded = true;\n\t\t  }\n\t\t})();\n\t\twindow._fbq = window._fbq || [];\n\t\twindow._fbq.push(['track', '{{transactionId}}', {'value':'{{transactionTotal}}','currency':'BRL'}]);\n\t\t</script>\n\t\t<noscript><img height=\"1\" width=\"1\" alt=\"\" style=\"display:none\" src=\"https://www.facebook.com/tr?ev={{transactionId}}&cd[value]={{transactionTotal}}&cd[currency]=BRL&noscript=1\" /></noscript>"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "supportDocumentWrite",
+                        "value": "false"
+                    }
+                ],
+                "fingerprint": "1623964968117",
+                "firingTriggerId": [
+                    "29"
+                ],
+                "setupTag": [
+                    {
+                        "tagName": "FB - .Pixel",
+                        "stopOnSetupFailure": true
+                    }
+                ],
+                "parentFolderId": "49",
+                "tagFiringOption": "ONCE_PER_LOAD",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                }
+            },
+            {
+                "accountId": "76251039",
+                "containerId": "47125944",
+                "tagId": "33",
+                "name": "FB - Purchase",
+                "type": "html",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "html",
+                        "value": "<script>fbq('track', 'Purchase', {value: {{transactionTotal}}, currency: 'BRL',em: '{{visitorContactInfoEmail}}',content_type: 'product',content_ids: {{transactionProductsIds}}});</script>"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "supportDocumentWrite",
+                        "value": "false"
+                    }
+                ],
+                "fingerprint": "1623964968117",
+                "firingTriggerId": [
+                    "29"
+                ],
+                "setupTag": [
+                    {
+                        "tagName": "FB - .Pixel",
+                        "stopOnSetupFailure": true
+                    }
+                ],
+                "parentFolderId": "49",
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                }
+            },
+            {
+                "accountId": "76251039",
+                "containerId": "47125944",
+                "tagId": "37",
+                "name": "FB - CompleteRegistration",
+                "type": "html",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "html",
+                        "value": "<script>fbq('track', 'CompleteRegistration');</script>"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "supportDocumentWrite",
+                        "value": "false"
+                    }
+                ],
+                "fingerprint": "1623964968116",
+                "firingTriggerId": [
+                    "6"
+                ],
+                "setupTag": [
+                    {
+                        "tagName": "FB - .Pixel",
+                        "stopOnSetupFailure": true
+                    }
+                ],
+                "parentFolderId": "49",
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                }
+            },
+            {
+                "accountId": "76251039",
+                "containerId": "47125944",
+                "tagId": "39",
+                "name": "FB - Other",
+                "type": "html",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "html",
+                        "value": "<script>fbq('track', 'Other');</script>"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "supportDocumentWrite",
+                        "value": "false"
+                    }
+                ],
+                "fingerprint": "1623964968118",
+                "firingTriggerId": [
+                    "5"
+                ],
+                "setupTag": [
+                    {
+                        "tagName": "FB - .Pixel",
+                        "stopOnSetupFailure": true
+                    }
+                ],
+                "parentFolderId": "49",
+                "tagFiringOption": "ONCE_PER_LOAD",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                }
+            },
+            {
+                "accountId": "76251039",
+                "containerId": "47125944",
+                "tagId": "41",
+                "name": "Facebook Aceite da LGPD.",
+                "type": "html",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "html",
+                        "value": "<meta name=\"facebook-domain-verification\" content=\"\" />"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "supportDocumentWrite",
+                        "value": "false"
+                    }
+                ],
+                "fingerprint": "1623964968117",
+                "firingTriggerId": [
+                    "2147479553"
+                ],
+                "parentFolderId": "49",
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                }
+            },
+            {
+                "accountId": "76251039",
+                "containerId": "47125944",
+                "tagId": "43",
+                "name": "FB - ViewContent",
+                "type": "html",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "html",
+                        "value": "<script>var precoFinal = parseFloat({{productPriceTo}}).toFixed(2);fbq('track', 'ViewContent', {value: precoFinal,\tcurrency: 'BRL',content_name: '{{productName}}',content_ids: {{productSkuIds}},content_type: 'product'});</script>\n"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "supportDocumentWrite",
+                        "value": "false"
+                    }
+                ],
+                "fingerprint": "1623964968118",
+                "firingTriggerId": [
+                    "15"
+                ],
+                "setupTag": [
+                    {
+                        "tagName": "FB - .Pixel",
+                        "stopOnSetupFailure": true
+                    }
+                ],
+                "parentFolderId": "49",
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                }
+            },
+            {
+                "accountId": "76251039",
+                "containerId": "47125944",
+                "tagId": "44",
+                "name": "FB - AddPaymentInfo",
+                "type": "html",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "html",
+                        "value": "<script>fbq('track', 'AddPaymentInfo');</script>"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "supportDocumentWrite",
+                        "value": "false"
+                    }
+                ],
+                "fingerprint": "1623964968143",
+                "firingTriggerId": [
+                    "42"
+                ],
+                "setupTag": [
+                    {
+                        "tagName": "FB - .Pixel",
+                        "stopOnSetupFailure": true
+                    }
+                ],
+                "parentFolderId": "49",
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                }
+            },
+            {
+                "accountId": "76251039",
+                "containerId": "47125944",
+                "tagId": "45",
+                "name": "FB - checkout inicio",
+                "type": "html",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "html",
+                        "value": "<script>fbq('track', 'InitiateCheckout');</script>"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "supportDocumentWrite",
+                        "value": "false"
+                    }
+                ],
+                "fingerprint": "1623964968119",
+                "firingTriggerId": [
+                    "14",
+                    "4"
+                ],
+                "setupTag": [
+                    {
+                        "tagName": "FB - .Pixel",
+                        "stopOnSetupFailure": true
+                    }
+                ],
+                "parentFolderId": "49",
+                "tagFiringOption": "ONCE_PER_LOAD",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                }
+            }
+        ],
+        "trigger": [
+            {
+                "accountId": "76251039",
+                "containerId": "47125944",
+                "triggerId": "4",
+                "name": "checkout-profile",
+                "type": "CUSTOM_EVENT",
+                "customEventFilter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{_event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "profile"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1623964968118",
+                "parentFolderId": "49"
+            },
+            {
+                "accountId": "76251039",
+                "containerId": "47125944",
+                "triggerId": "5",
+                "name": "pg Others",
+                "type": "CUSTOM_EVENT",
+                "customEventFilter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{_event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "otherView"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1623964968142",
+                "parentFolderId": "49"
+            },
+            {
+                "accountId": "76251039",
+                "containerId": "47125944",
+                "triggerId": "6",
+                "name": "checkout-shipping",
+                "type": "CUSTOM_EVENT",
+                "customEventFilter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{_event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "shipping"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1623964968140",
+                "parentFolderId": "49"
+            },
+            {
+                "accountId": "76251039",
+                "containerId": "47125944",
+                "triggerId": "8",
+                "name": "pg Busca",
+                "type": "PAGEVIEW",
+                "filter": [
+                    {
+                        "type": "MATCH_REGEX",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{pageCategory}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "InternalSiteSearch"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1623964968142",
+                "parentFolderId": "49"
+            },
+            {
+                "accountId": "76251039",
+                "containerId": "47125944",
+                "triggerId": "11",
+                "name": "Clique - Checkout",
+                "type": "LINK_CLICK",
+                "filter": [
+                    {
+                        "type": "CONTAINS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{Click URL}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "#/orderform"
+                            }
+                        ]
+                    }
+                ],
+                "waitForTags": {
+                    "type": "BOOLEAN",
+                    "value": "false"
+                },
+                "checkValidation": {
+                    "type": "BOOLEAN",
+                    "value": "false"
+                },
+                "waitForTagsTimeout": {
+                    "type": "TEMPLATE",
+                    "value": "2000"
+                },
+                "uniqueTriggerId": {
+                    "type": "TEMPLATE"
+                },
+                "fingerprint": "1623964968143",
+                "parentFolderId": "49"
+            },
+            {
+                "accountId": "76251039",
+                "containerId": "47125944",
+                "triggerId": "13",
+                "name": "cart",
+                "type": "CUSTOM_EVENT",
+                "customEventFilter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{_event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "cart"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1623964968144",
+                "parentFolderId": "49"
+            },
+            {
+                "accountId": "76251039",
+                "containerId": "47125944",
+                "triggerId": "14",
+                "name": "checkout-email",
+                "type": "CUSTOM_EVENT",
+                "customEventFilter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{_event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "email"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1623964968143",
+                "parentFolderId": "49"
+            },
+            {
+                "accountId": "76251039",
+                "containerId": "47125944",
+                "triggerId": "15",
+                "name": "productView",
+                "type": "CUSTOM_EVENT",
+                "customEventFilter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{_event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "productView"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1623964968144",
+                "parentFolderId": "49"
+            },
+            {
+                "accountId": "76251039",
+                "containerId": "47125944",
+                "triggerId": "18",
+                "name": "pg Geral",
+                "type": "PAGEVIEW",
+                "filter": [
+                    {
+                        "type": "MATCH_REGEX",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{pageCategory}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "Department|Category|Home|InternalSiteSearch"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1623964968145",
+                "parentFolderId": "49"
+            },
+            {
+                "accountId": "76251039",
+                "containerId": "47125944",
+                "triggerId": "21",
+                "name": "pg Home",
+                "type": "PAGEVIEW",
+                "filter": [
+                    {
+                        "type": "MATCH_REGEX",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{pageCategory}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "Home"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1623964968145",
+                "parentFolderId": "49"
+            },
+            {
+                "accountId": "76251039",
+                "containerId": "47125944",
+                "triggerId": "25",
+                "name": "addToCart",
+                "type": "CLICK",
+                "filter": [
+                    {
+                        "type": "MATCH_REGEX",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{Click Classes}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "buy-button|buy-button-ref"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1623964968145",
+                "parentFolderId": "49"
+            },
+            {
+                "accountId": "76251039",
+                "containerId": "47125944",
+                "triggerId": "29",
+                "name": "orderConfirmation - orderPlaced",
+                "type": "CUSTOM_EVENT",
+                "customEventFilter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{_event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "orderPlaced"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1623964968146",
+                "parentFolderId": "49"
+            },
+            {
+                "accountId": "76251039",
+                "containerId": "47125944",
+                "triggerId": "36",
+                "name": "pg Vitrines",
+                "type": "PAGEVIEW",
+                "filter": [
+                    {
+                        "type": "MATCH_REGEX",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{pageCategory}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "Department|Category|InternalSiteSearch"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1623964968146",
+                "parentFolderId": "49"
+            },
+            {
+                "accountId": "76251039",
+                "containerId": "47125944",
+                "triggerId": "38",
+                "name": "pg Produto",
+                "type": "PAGEVIEW",
+                "filter": [
+                    {
+                        "type": "MATCH_REGEX",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{pageCategory}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "Product"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1623964968147",
+                "parentFolderId": "49"
+            },
+            {
+                "accountId": "76251039",
+                "containerId": "47125944",
+                "triggerId": "42",
+                "name": "checkout-payment",
+                "type": "CUSTOM_EVENT",
+                "customEventFilter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{_event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "payment"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1623964968146",
+                "parentFolderId": "49"
+            }
+        ],
+        "variable": [
+            {
+                "accountId": "76251039",
+                "containerId": "47125944",
+                "variableId": "3",
+                "name": "visitorContactInfoEmail",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "visitorContactInfo.0"
+                    }
+                ],
+                "fingerprint": "1623964968149",
+                "parentFolderId": "49",
+                "formatValue": {}
+            },
+            {
+                "accountId": "76251039",
+                "containerId": "47125944",
+                "variableId": "7",
+                "name": "pageCategory",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "pageCategory"
+                    }
+                ],
+                "fingerprint": "1623964968148",
+                "parentFolderId": "49",
+                "formatValue": {}
+            },
+            {
+                "accountId": "76251039",
+                "containerId": "47125944",
+                "variableId": "9",
+                "name": "visitorDemographicInfo",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "visitorDemographicInfo"
+                    }
+                ],
+                "fingerprint": "1623964968147",
+                "parentFolderId": "49",
+                "formatValue": {}
+            },
+            {
+                "accountId": "76251039",
+                "containerId": "47125944",
+                "variableId": "10",
+                "name": "shelfProductIds",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "shelfProductIds"
+                    }
+                ],
+                "fingerprint": "1623964968149",
+                "parentFolderId": "49",
+                "formatValue": {}
+            },
+            {
+                "accountId": "76251039",
+                "containerId": "47125944",
+                "variableId": "12",
+                "name": "transactionId",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "transactionId"
+                    }
+                ],
+                "fingerprint": "1623964968148",
+                "parentFolderId": "49",
+                "formatValue": {}
+            },
+            {
+                "accountId": "76251039",
+                "containerId": "47125944",
+                "variableId": "16",
+                "name": "productName",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "productName"
+                    }
+                ],
+                "fingerprint": "1623964968149",
+                "parentFolderId": "49",
+                "formatValue": {}
+            },
+            {
+                "accountId": "76251039",
+                "containerId": "47125944",
+                "variableId": "17",
+                "name": "siteSearchTerm",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "siteSearchTerm"
+                    }
+                ],
+                "fingerprint": "1623964968150",
+                "parentFolderId": "49",
+                "formatValue": {}
+            },
+            {
+                "accountId": "76251039",
+                "containerId": "47125944",
+                "variableId": "22",
+                "name": "productPriceTo",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "productPriceTo"
+                    }
+                ],
+                "fingerprint": "1623964968150",
+                "parentFolderId": "49",
+                "formatValue": {}
+            },
+            {
+                "accountId": "76251039",
+                "containerId": "47125944",
+                "variableId": "23",
+                "name": "orderFormProducts",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "orderFormProducts"
+                    }
+                ],
+                "fingerprint": "1623964968150",
+                "parentFolderId": "49",
+                "formatValue": {}
+            },
+            {
+                "accountId": "76251039",
+                "containerId": "47125944",
+                "variableId": "24",
+                "name": "orderFormProductsIds",
+                "type": "jsm",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "javascript",
+                        "value": "function() {\n\t  var arr = {{orderFormProducts}}, len = arr.length, i = -1, res = [];\n\t  while (++i < len) {res[i] = arr[i].sku;};\n\t  return res;\n\t}"
+                    }
+                ],
+                "fingerprint": "1623964968151",
+                "parentFolderId": "49",
+                "formatValue": {}
+            },
+            {
+                "accountId": "76251039",
+                "containerId": "47125944",
+                "variableId": "26",
+                "name": "orderFormProductsValue",
+                "type": "jsm",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "javascript",
+                        "value": "function() {\n\t  var arr = {{orderFormProducts}}, len = arr.length, i = -1, subtotal = 0;\n\t  while (++i < len) {if(arr[i].sellingPrice != undefined) subtotal += arr[i].sellingPrice;};\n\t  return subtotal;\n\t}"
+                    }
+                ],
+                "fingerprint": "1623964968151",
+                "parentFolderId": "49",
+                "formatValue": {}
+            },
+            {
+                "accountId": "76251039",
+                "containerId": "47125944",
+                "variableId": "28",
+                "name": "transactionTotal",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "transactionTotal"
+                    }
+                ],
+                "fingerprint": "1623964968154",
+                "parentFolderId": "49",
+                "formatValue": {}
+            },
+            {
+                "accountId": "76251039",
+                "containerId": "47125944",
+                "variableId": "31",
+                "name": "transactionProducts",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "transactionProducts"
+                    }
+                ],
+                "fingerprint": "1623964968151",
+                "parentFolderId": "49",
+                "formatValue": {}
+            },
+            {
+                "accountId": "76251039",
+                "containerId": "47125944",
+                "variableId": "32",
+                "name": "transactionProductsIds",
+                "type": "jsm",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "javascript",
+                        "value": "function() {\n  var arr = {{transactionProducts}}, len = arr.length, i = -1, res = [];\n  while (++i < len) {res[i] = arr[i].sku;};\n  return res;\n}"
+                    }
+                ],
+                "fingerprint": "1623964968152",
+                "parentFolderId": "49",
+                "formatValue": {}
+            },
+            {
+                "accountId": "76251039",
+                "containerId": "47125944",
+                "variableId": "34",
+                "name": "skuStocks",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "skuStocks"
+                    }
+                ],
+                "fingerprint": "1623964968153",
+                "parentFolderId": "49",
+                "formatValue": {}
+            },
+            {
+                "accountId": "76251039",
+                "containerId": "47125944",
+                "variableId": "35",
+                "name": "productSkuIds",
+                "type": "jsm",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "javascript",
+                        "value": "function(){return Object.keys({{skuStocks}});}"
+                    }
+                ],
+                "fingerprint": "1623964968152",
+                "parentFolderId": "49",
+                "formatValue": {}
+            },
+            {
+                "accountId": "76251039",
+                "containerId": "47125944",
+                "variableId": "40",
+                "name": "Checkout - Cliente - Cidade",
+                "type": "jsm",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "javascript",
+                        "value": "function(){\n  x = {{visitorDemographicInfo}}[1].split(\" - \");\n\treturn x[x.length-2];\n}"
+                    }
+                ],
+                "fingerprint": "1623964968153",
+                "parentFolderId": "49",
+                "formatValue": {}
+            },
+            {
+                "accountId": "76251039",
+                "containerId": "47125944",
+                "variableId": "46",
+                "name": "Checkout - Cliente - UF",
+                "type": "jsm",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "javascript",
+                        "value": "function(){\n  x = {{visitorDemographicInfo}}[1].split(\" - \");\n\treturn x[x.length-1];\n}"
+                    }
+                ],
+                "fingerprint": "1623964968153",
+                "parentFolderId": "49",
+                "formatValue": {}
+            },
+            {
+                "accountId": "76251039",
+                "containerId": "47125944",
+                "variableId": "47",
+                "name": "FB-id",
+                "type": "c",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "value",
+                        "value": "0"
+                    }
+                ],
+                "fingerprint": "1623964968154",
+                "parentFolderId": "49",
+                "formatValue": {}
+            }
+        ],
+        "folder": [
+            {
+                "accountId": "76251039",
+                "containerId": "47125944",
+                "folderId": "49",
+                "name": "Facebook",
+                "fingerprint": "1623964956888"
+            }
+        ],
+        "builtInVariable": [
+            {
+                "accountId": "76251039",
+                "containerId": "47125944",
+                "type": "CLICK_CLASSES",
+                "name": "Click Classes"
+            },
+            {
+                "accountId": "76251039",
+                "containerId": "47125944",
+                "type": "CLICK_URL",
+                "name": "Click URL"
+            }
+        ],
+        "fingerprint": "1623965229775",
+        "tagManagerUrl": "https://tagmanager.google.com/#/versions/accounts/76251039/containers/47125944/versions/0?apiLink=version"
+    }
+}

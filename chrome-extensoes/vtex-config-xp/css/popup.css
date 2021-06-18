@@ -5,3 +5,7 @@ h1{
 fieldset .item{
   white-space: nowrap;
 }
+
+.container-site-vtex{
+  display: none;
+}

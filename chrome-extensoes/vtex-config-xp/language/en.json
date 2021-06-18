@@ -1,0 +1,23 @@
+{
+  "info-site": {
+    "h1": "Information on the site",
+    "site-vtex": {
+      "label": "Site VTEX",
+      "value": [
+        "yes",
+        "no"
+      ]
+    },
+    "versao-vtex": {
+      "label": "VTEX version",
+      "value": [
+        "VTEX.CMS",
+        "VTEX.IO",
+        "other platform"
+      ]
+    },
+    "accountName-vtex": "Account Name",
+    "salesChannel-vtex": "Trade Policy",
+    "virtualFolder-vtex": "Virtual Folder"
+  }
+}

@@ -2,16 +2,23 @@
 <html>
 
 <head>
-  <link rel="stylesheet" href="/css/button.css">
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="/css/options.css">
 </head>
 
 <body>
-  <div id="buttonDiv">
+  <div id="main">
+    <p>Choose a Language:
+      <select class="language-select" id="language">
+        <option value="pt-br" selected="selected">Português (BR)</option>
+        <option value="en">English (USA)</option>
+        <option value="es">Spanish</option>
+      </select>
+    </p>
   </div>
-  <div>
-    <p>Choose a different background color!</p>
-  </div>
+  <script src="/js/geral.js"></script>
+  <script src="/js/language.js"></script>
+  <script src="/js/options.js"></script>
 </body>
-<script src="/js/options.js"></script>
 
 </html>

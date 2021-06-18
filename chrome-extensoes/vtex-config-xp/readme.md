@@ -1,8 +1,7 @@
 # VTEX-Config - XP
 
-Informa se um site é VTEX ou não.
-Se for VTEX, informa se é VTEX.CMS ou VTEX.IO
-✨Linguas disponíveis: Português (Brasil), English (USA) e Spanish (Portunhol 😅).
+<p>Informa se um site é VTEX ou não. Se for VTEX, informa se é VTEX.CMS ou VTEX.IO</p>
+<p>✨Linguas disponíveis: Português (Brasil), English (USA) e Spanish (Portunhol 😅).</p>
 
 ## Para instalar no Chrome, siga os passos abaixo:
 
@@ -16,8 +15,8 @@ Se for VTEX, informa se é VTEX.CMS ou VTEX.IO
 
 ## Política de privacidade
 
-Nós não lemos, armazenamos ou compartilhamos nenhuma informação dos seus dados pessoais.
-Mais informações em: <a href="https://github.com/xpagencia/vtex/blob/master/chrome-extensoes/vtex-config-xp/docs/politica-privacidade.md">https://github.com/xpagencia/vtex/blob/master/chrome-extensoes/vtex-config-xp/docs/politica-privacidade.md</a>
+<p>Nós não lemos, armazenamos ou compartilhamos nenhuma informação dos seus dados pessoais.</p>
+<p>Mais informações em: <a href="https://github.com/xpagencia/vtex/blob/master/chrome-extensoes/vtex-config-xp/docs/politica-privacidade.md">https://github.com/xpagencia/vtex/blob/master/chrome-extensoes/vtex-config-xp/docs/politica-privacidade.md</a></p>
 
 ## Versão da extensão
 

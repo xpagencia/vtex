@@ -2,6 +2,7 @@
 
 Informa se um site é VTEX ou não.
 Se for VTEX, informa se é VTEX.CMS ou VTEX.IO
+✨Linguas disponíveis: Português (Brasil), English (USA) e Spanish (Portunhol 😅).
 
 ## Para instalar no Chrome, siga os passos abaixo:
 
@@ -17,6 +18,17 @@ Se for VTEX, informa se é VTEX.CMS ou VTEX.IO
 
 Nós não lemos, armazenamos ou compartilhamos nenhuma informação dos seus dados pessoais.
 Mais informações em: <a href="https://github.com/xpagencia/vtex/blob/master/chrome-extensoes/vtex-config-xp/docs/politica-privacidade.md">https://github.com/xpagencia/vtex/blob/master/chrome-extensoes/vtex-config-xp/docs/politica-privacidade.md</a>
+
+## Versão da extensão
+
+### 18/06/2021
+
+- Inclusão das linguas English e Spanish.
+- Inclusão da opção de selecionar a lingua da extensão.
+
+### 22/05/2021
+
+- Versão inicial da extensão.
 
 ### Em caso de dúvidas:
 

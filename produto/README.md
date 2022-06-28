@@ -11,7 +11,7 @@ Ajustar as opções de retirada em loja para não exibir o ID e ter a opção de
 Tipos de listas possíveis: 
 
 - detalhado: Irá exibir todas as opções de retirada em loja e de entrega.
-- resumido: Irá exibir todas as opções de retirada em loja, a opção mais barata de entrega e a opção mais cara de entrega.
+- resumido: Irá exibir todas as opções de retirada em loja, a opção mais barata de entrega e a opção mais rápida de entrega.
 
 ### Funcionamento
 

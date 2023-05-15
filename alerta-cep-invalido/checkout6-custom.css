@@ -1,0 +1,7 @@
+.xp-alerta{margin-top:20px;width:80%}
+.xp-alerta .content{display:grid;grid-template-areas:"icone titulo" "icone mensagem" "linha linha" "adicional adicional";grid-template-columns:50px auto;align-items:stretch;grid-template-rows:auto auto 27px auto}
+.xp-alerta .content i{grid-area:icone;align-self:center;grid-row:1/3}
+.xp-alerta .content .alert-heading{grid-area:titulo; color: #333; margin-top: 5px; margin-bottom: 5px}
+.xp-alerta .content .texto{grid-area:mensagem}
+.xp-alerta .content hr{grid-area:linha}
+.xp-alerta .content .adicional{grid-area:adicional}

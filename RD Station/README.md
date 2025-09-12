@@ -1,3 +1,6 @@
+**ATENÇÃO: Não utilizem mais esse script. Ele está obsoleto do lado da VTEX e da RD Station.**
+
+
 <h1>Script para integrar a RD Station com a loja da VTEX</h1>
 <p>O objetivo é ler todos os leads que cadastram o e-mail na newsletter da loja para serem considerados leads, leads qualificados, oportunidades e vendas na RD Station.</p>
 <p>É importante entender que se o lead não se cadastrar na newsletter, não tem como saber qual o e-mail dele. Então, eu só conseguirei levá-lo para a RDStation se ele se cadastrar na loja pelo link "Minha conta" ou passar do carrinho para dar fluxo no cadastro dentro da RD Station.</p>
